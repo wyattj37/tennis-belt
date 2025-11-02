@@ -1,0 +1,66 @@
+<style>
+.lineage {
+  font-family: system-ui, sans-serif;
+  line-height: 1.4;
+  margin: 2rem auto;
+  max-width: 700px;
+  border-left: 3px solid #ccc;
+  padding-left: 1.5rem;
+}
+
+.entry {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -1.91rem;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  background: #0d6efd;
+  border-radius: 50%;
+}
+
+.holder {
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details {
+  margin-left: 2rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  border-left: 2px solid #ddd;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+</style>
+
+{{ $emojiMap := .Site.Data.country_flags }}
+
+<div class="lineage">
+  {{ range .Site.Data.matches }}
+  <div class="entry">
+    <div class="holder">
+      {{ $emoji := index $emojiMap .country }}
+      <span> {{ $emoji }} {{ .holder }}</span>
+      <span>{{ .defenses }} Defense{{ if ne .defenses 1 }}s{{ end }}</span>
+    </div>
+    <div class="details">
+      {{ $seconds := div .date_won 1000 }}
+      {{ $timestamp := int $seconds }}
+      {{ $t := time $timestamp }}
+      {{ $formatted := $t.Format "January 2006" }}
+      def. {{ .won_from }}
+      <br>
+      {{ .score }}  |  {{ .tournament_won }} ({{ .round_won }}) {{ $formatted }}  
+    </div>
+  </div>
+  {{ end }}
+</div>

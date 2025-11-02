@@ -1,0 +1,144 @@
+<!-- Include the sortable JS -->
+<script src="https://cdn.jsdelivr.net/gh/tofsjonas/sortable@latest/sortable.min.js"></script>
+
+<!-- Table Styles -->
+<style>
+/* Table base */
+#player-stats {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  font-family: system-ui, sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table header */
+#player-stats thead {
+  background-color: #3d7fe1;
+  color: #fff;
+  text-align: left;
+}
+
+#player-stats th {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Table body rows */
+#player-stats tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+#player-stats tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Table cells */
+#player-stats td {
+  padding: 0.5rem 1rem;
+  color: #111; /* dark gray/black for table text */
+}
+
+/* Right-align numeric columns (everything except Name) */
+#player-stats td:nth-child(n+2),
+#player-stats th:nth-child(n+2) {
+  text-align: right;
+}
+
+/* Hover effect */
+#player-stats tbody tr:hover {
+  background-color: #e6f0ff;
+}
+
+/* Responsive */
+@media(max-width: 700px) {
+  #player-stats th, #player-stats td {
+    padding: 0.5rem;
+  }
+  #player-stats {
+    font-size: 0.9rem;
+  }
+}
+
+.stats-key {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.5rem;
+  background-color: #f5f5f5ed;
+  border-left: 4px solid #3d7fe1;
+  border-radius: 6px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.4;
+  display: grid;
+  grid-template-columns: 150px 1fr; /* fixed term column, rest for description */
+  row-gap: 0.5rem;
+  column-gap: 1rem;
+}
+
+.stats-key dt {
+  font-weight: 600;
+  color: #555;
+}
+
+.stats-key dd {
+  margin: 0;
+  color: #555;
+}
+</style>
+
+{{ $players := .Page.Site.Data.player_stats }}
+
+<dl class="stats-key">
+  <dt>Reigns</dt><dd>Number of separate stints holding the belt</dd>
+  <dt>Total Defenses</dt><dd>Total number of matches successfully defending the belt</dd>
+  <dt>Consec. Defenses</dt><dd>Maximum consecutive defenses during one reign</dd>
+  <dt>Wins</dt><dd>Wins in belt matches</dd>
+  <dt>Losses</dt><dd>Losses in belt matches</dd>
+  <dt>Total Matches</dt><dd>Total belt matches played</dd>
+  <dt>Win Rate</dt><dd>Win rate in belt matches</dd>
+</dl>
+
+<!-- Stats Table -->
+<table id="player-stats" class="sortable">
+   <colgroup>
+    <col style="width: 23%"> <!-- Name -->
+    <col style="width: 11"> <!-- Reigns -->
+    <col style="width: 11%"> <!-- Defenses -->
+    <col style="width: 11%">  <!-- W -->
+    <col style="width: 11%">  <!-- L -->
+    <col style="width: 11%"> <!-- Total Matches -->
+    <col style="width: 11%"> <!-- Win Rate -->
+    <col style="width: 11%"> <!-- Total Defenses -->
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Reigns</th>
+      <th>Total Defenses</th>
+      <th>Consec. Defenses</th>
+      <th>Wins</th>
+      <th>Losses</th>
+      <th>Total Matches</th>
+      <th>Win Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $players }}
+    <tr>
+      <td>{{ .winner_name }}</td>
+      <td>{{ .reign_number }}</td>
+      <td>{{ .total_defenses }}</td>
+      <td>{{ .defenses }}</td>
+      <td>{{ .W }}</td>
+      <td>{{ .L }}</td>
+      <td>{{ .total_matches }}</td>
+      <td data-sort="{{ .win_rate }}">{{ printf "%.1f%%" (mul .win_rate 100) }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
