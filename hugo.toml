@@ -1,4 +1,5 @@
 baseURL = "https://wyattj37.github.io/tennis-belt/"
+
 languageCode = "en-us"
 
 [markup.goldmark.renderer]
