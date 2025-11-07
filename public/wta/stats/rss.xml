@@ -28,6 +28,12 @@
             
         
     
+        
+
+        
+            
+        
+    
 
 
 
@@ -49,21 +55,21 @@
         
 
         
-            <link>http://localhost:1313/lineage/</link>
+            <link>http://localhost:1313/wta/stats/</link>
         
 
         
-            <atom:link href="http://localhost:1313/lineage/rss.xml" hreflang="en-us" rel="self" type="application/rss+xml"/>
+            <atom:link href="http://localhost:1313/wta/stats/rss.xml" hreflang="en-us" rel="self" type="application/rss+xml"/>
         
 
         
             
 
-            <atom:link href="http://localhost:1313/lineage/" hreflang="en-us" rel="alternate" type="text/html"/>
+            <atom:link href="http://localhost:1313/wta/stats/" hreflang="en-us" rel="alternate" type="text/html"/>
         
             
 
-            <atom:link href="http://localhost:1313/lineage/rss.xml" hreflang="en-us" rel="alternate" type="application/rss+xml"/>
+            <atom:link href="http://localhost:1313/wta/stats/rss.xml" hreflang="en-us" rel="alternate" type="application/rss+xml"/>
         
 
         
@@ -71,7 +77,7 @@
         
 
         
-            <title>Lineage · Tennis Belt Tracker</title>
+            <title>Player Stats · Tennis Belt Tracker · Redirecting to ATP Belt</title>
         
 
         

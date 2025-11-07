@@ -49,21 +49,21 @@
         
 
         
-            <link>http://localhost:1313/lineage/</link>
+            <link>http://localhost:1313/atp/</link>
         
 
         
-            <atom:link href="http://localhost:1313/lineage/rss.xml" hreflang="en-us" rel="self" type="application/rss+xml"/>
+            <atom:link href="http://localhost:1313/atp/rss.xml" hreflang="en-us" rel="self" type="application/rss+xml"/>
         
 
         
             
 
-            <atom:link href="http://localhost:1313/lineage/" hreflang="en-us" rel="alternate" type="text/html"/>
+            <atom:link href="http://localhost:1313/atp/" hreflang="en-us" rel="alternate" type="text/html"/>
         
             
 
-            <atom:link href="http://localhost:1313/lineage/rss.xml" hreflang="en-us" rel="alternate" type="application/rss+xml"/>
+            <atom:link href="http://localhost:1313/atp/rss.xml" hreflang="en-us" rel="alternate" type="application/rss+xml"/>
         
 
         
@@ -71,7 +71,7 @@
         
 
         
-            <title>Lineage · Tennis Belt Tracker</title>
+            <title>Tennis Belt Tracker · Redirecting to ATP Belt</title>
         
 
         
