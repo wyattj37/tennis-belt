@@ -98,7 +98,10 @@
         <span>{{ .defenses }} Defense{{ if ne .defenses 1 }}s{{ end }}</span>
       </div>
       <div class="details">
-        {{ $formatted := .date_won }}
+        {{ $seconds := div .date_won 1000 }}
+        {{ $timestamp := int $seconds }}
+        {{ $t := time $timestamp }}
+        {{ $formatted := $t.Format "January 2006" }}
         def. {{ .won_from }}
         <br>
         {{ .score }}  |  {{ .tournament_won }} ({{ .round_won }}) {{ $formatted }}
