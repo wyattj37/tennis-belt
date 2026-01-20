@@ -13,7 +13,7 @@ atp_new_matches = [
     'loser_name': 'Hugo Gaston',
     'loser_ioc': 'FRE',
     'score': '6-2 6-1 RET',
-    'defenses': 0,
+    'defenses': 6,
     'change': 'No'}
 ]
 
@@ -27,7 +27,7 @@ wta_new_matches = [
     'loser_name': 'Tiantsoa Sarah Rakotomanga Rajaonah',
     'loser_ioc': 'FRE',
     'score': '6-4 6-1',
-    'defenses' : 
+    'defenses' : 2,
     'change': 'No'}
 ]
 
@@ -182,9 +182,9 @@ def run(cmd):
 run("hugo server")
 
 # deploy site
-run("hugo -d docs")
+# run("hugo -d docs")
 
-# git steps
-run("git add .")
-run(f'git commit -m "{date.today():%m/%d} update"')
-run("git push")
+# # git steps
+# run("git add .")
+# run(f'git commit -m "{date.today():%m/%d} update"')
+# run("git push")
