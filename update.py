@@ -4,34 +4,30 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
-    
+    {'tourney_name': 'Australian Open',
+    'round': 'R128',
+    'surface': 'Hard',
+    'tourney_date': '2026-01-18',
+    'winner_name': 'Jannik Sinner',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Hugo Gaston',
+    'loser_ioc': 'FRE',
+    'score': '6-2 6-1 RET',
+    'defenses': 0,
+    'change': 'No'}
 ]
 
 wta_new_matches = [
     {'tourney_name': 'Brisbane International',
-    'round': 'SF',
+    'round': 'R128',
     'surface': 'Hard',
-    'tourney_date': '2026-01-09',
+    'tourney_date': '2026-01-18',
     'winner_name': 'Aryna Sabalenka',
     'winner_ioc': 'BEL',
-    'loser_name': 'Karolina Muchova',
-    'loser_ioc': 'CZE',
-    'score': '6-3 6-4',
-    'defenses': 0,
-    'reign_number': 0,
-    'change': 'Yes'},
-
-    {'tourney_name': 'Brisbane International',
-    'round': 'F',
-    'surface': 'Hard',
-    'tourney_date': '2026-01-11',
-    'winner_name': 'Aryna Sabalenka',
-    'winner_ioc': 'BEL',
-    'loser_name': 'Marta Kostyuk',
-    'loser_ioc': 'UKR',
-    'score': '6-4 6-3',
-    'defenses': 1,
-    'reign_number': 0,
+    'loser_name': 'Tiantsoa Sarah Rakotomanga Rajaonah',
+    'loser_ioc': 'FRE',
+    'score': '6-4 6-1',
+    'defenses' : 
     'change': 'No'}
 ]
 
@@ -142,8 +138,8 @@ atp_lineage_df.to_json("data/atp_lineage.json", orient="records")
 # update atp stats
 atp_player_stats_df = pd.read_json("data/player_stats.json")
 for match in atp_new_matches:
-    winner_mask = atp_new_df["winner_name"] == match['winner_name']
-    loser_mask = atp_new_df["winner_name"] == match['loser_name']
+    winner_mask = atp_player_stats_df["winner_name"] == match['winner_name']
+    loser_mask = atp_player_stats_df["winner_name"] == match['loser_name']
     
     atp_player_stats_df.loc[winner_mask, 'W'] += 1
     atp_player_stats_df.loc[loser_mask, 'L'] += 1
@@ -183,7 +179,7 @@ def run(cmd):
     subprocess.run(cmd, shell=True, check=True)
 
 # test site
-# run("hugo server")
+run("hugo server")
 
 # deploy site
 run("hugo -d docs")
