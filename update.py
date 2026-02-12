@@ -4,53 +4,65 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
-    {'tourney_name': 'Australian Open',
-    'round': 'SF',
-    'surface': 'Hard',
-    'tourney_date': '2026-01-30',
-    'winner_name': 'Novak Djokovic',
-    'winner_ioc': 'SRB',
-    'loser_name': 'Jannik Sinner',
-    'loser_ioc': 'ITA',
-    'score': '3-6 6-3 4-6 6-4 6-4',
-    'defenses': 0,
-    'change': 'Yes'},
+    # {'tourney_name': 'Australian Open',
+    # 'round': 'SF',
+    # 'surface': 'Hard',
+    # 'tourney_date': '2026-01-30',
+    # 'winner_name': 'Novak Djokovic',
+    # 'winner_ioc': 'SRB',
+    # 'loser_name': 'Jannik Sinner',
+    # 'loser_ioc': 'ITA',
+    # 'score': '3-6 6-3 4-6 6-4 6-4',
+    # 'defenses': 0,
+    # 'change': 'Yes'},
 
-    {'tourney_name': 'Australian Open',
-    'round': 'F',
-    'surface': 'Hard',
-    'tourney_date': '2026-02-01',
-    'winner_name': 'Carlos Alcaraz',
-    'winner_ioc': 'ESP',
-    'loser_name': 'Novak Djokovic',
-    'loser_ioc': 'SRB',
-    'score': '2-6 6-2 6-3 7-5',
-    'defenses': 0,
-    'change': 'Yes'}
+    # {'tourney_name': 'Australian Open',
+    # 'round': 'F',
+    # 'surface': 'Hard',
+    # 'tourney_date': '2026-02-01',
+    # 'winner_name': 'Carlos Alcaraz',
+    # 'winner_ioc': 'ESP',
+    # 'loser_name': 'Novak Djokovic',
+    # 'loser_ioc': 'SRB',
+    # 'score': '2-6 6-2 6-3 7-5',
+    # 'defenses': 0,
+    # 'change': 'Yes'}
 ]
 
 wta_new_matches = [
-    {'tourney_name': 'Australian Open',
-    'round': 'SF',
+    {'tourney_name': 'Qatar Open',
+    'round': 'R32',
     'surface': 'Hard',
-    'tourney_date': '2026-01-27',
-    'winner_name': 'Aryna Sabalenka',
-    'winner_ioc': 'BEL',
-    'loser_name': 'Elina Svitolina',
-    'loser_ioc': 'UKR',
-    'score': '6-2 6-3',
-    'defenses' : 7,
-    'change': 'No'},
-
-    {'tourney_name': 'Australian Open',
-    'round': 'F',
-    'surface': 'Hard',
-    'tourney_date': '2026-01-29',
+    'tourney_date': '2026-02-10',
     'winner_name': 'Elena Rybakina',
     'winner_ioc': 'KAZ',
-    'loser_name': 'Aryna Sabalenka',
-    'loser_ioc': 'BEL',
-    'score': '6-4 4-6 6-4',
+    'loser_name': 'Wang Xinyu',
+    'loser_ioc': 'CHN',
+    'score': '6-2 6-4',
+    'defenses' : 1,
+    'change': 'No'},
+
+    {'tourney_name': 'Qatar Open',
+    'round': 'R16',
+    'surface': 'Hard',
+    'tourney_date': '2026-02-11',
+    'winner_name': 'Elena Rybakina',
+    'winner_ioc': 'KAZ',
+    'loser_name': 'Qinwen Zheng',
+    'loser_ioc': 'CHN',
+    'score': '4-6 6-2 7-5',
+    'defenses' : 2,
+    'change': 'No'},
+    
+    {'tourney_name': 'Qatar Open',
+    'round': 'QF',
+    'surface': 'Hard',
+    'tourney_date': '2026-02-12',
+    'winner_name': 'Victoria Mboko',
+    'winner_ioc': 'CAN',
+    'loser_name': 'Elena Rybakina',
+    'loser_ioc': 'KAZ',
+    'score': '7-5 4-6 6-4',
     'defenses' : 0,
     'change': 'Yes'}
 ]
@@ -203,12 +215,12 @@ def run(cmd):
     subprocess.run(cmd, shell=True, check=True)
 
 # test site
-run("hugo server")
+# run("hugo server")
 
 # deploy site
-# run("hugo -d docs")
+run("hugo -d docs")
 
-# # git steps
-# run("git add .")
-# run(f'git commit -m "{date.today():%m/%d} update"')
-# run("git push")
+# git steps
+run("git add .")
+run(f'git commit -m "{date.today():%m/%d} update"')
+run("git push")
