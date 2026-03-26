@@ -13,7 +13,7 @@ atp_new_matches = [
     'winner_ioc': 'ITA',
     'loser_name': 'Frances Tiafoe',
     'loser_ioc': 'USA',
-    'score': '6-2 62',
+    'score': '6-2 6-2',
     'defenses': 4,
     'change': 'No'},
 ]
