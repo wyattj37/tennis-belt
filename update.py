@@ -4,33 +4,56 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
+    {'tourney_name': 'Miami Open',
+    'round': 'SF',
+    'surface': 'Hard',
+    'tourney_date': '2026-03-27',
+    'winner_name': 'Jannik Sinner',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Alexander Zverev',
+    'loser_ioc': 'GER',
+    'score': '6-3 7-6(4)',
+    'defenses': 5,
+    'change': 'No'},
+
+    {'tourney_name': 'Miami Open',
+    'round': 'F',
+    'surface': 'Hard',
+    'tourney_date': '2026-03-29',
+    'winner_name': 'Jannik Sinner',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Jiri Lehecka',
+    'loser_ioc': 'CZE',
+    'score': '6-4 6-4',
+    'defenses': 6,
+    'change': 'No'}
+]
+
+wta_new_matches = [
 
      {'tourney_name': 'Miami Open',
     'round': 'SF',
     'surface': 'Hard',
     'tourney_date': '2026-03-26',
-    'winner_name': 'Jannik Sinner',
-    'winner_ioc': 'ITA',
-    'loser_name': 'Frances Tiafoe',
-    'loser_ioc': 'USA',
-    'score': '6-2 6-2',
-    'defenses': 4,
+    'winner_name': 'Aryna Sabalenka',
+    'winner_ioc': 'BLR',
+    'loser_name': 'Elena Rybakina',
+    'loser_ioc': 'KAZ',
+    'score': '6-4 6-3',
+    'defenses' : 5,
     'change': 'No'},
-]
 
-wta_new_matches = [
-
-    #  {'tourney_name': 'Miami Open',
-    # 'round': 'SF',
-    # 'surface': 'Hard',
-    # 'tourney_date': '2026-03-25',
-    # 'winner_name': 'Aryna Sabalenka',
-    # 'winner_ioc': 'BLR',
-    # 'loser_name': '',
-    # 'loser_ioc': '',
-    # 'score': '',
-    # 'defenses' : 4,
-    # 'change': 'No'},
+     {'tourney_name': 'Miami Open',
+    'round': 'F',
+    'surface': 'Hard',
+    'tourney_date': '2026-03-29',
+    'winner_name': 'Aryna Sabalenka',
+    'winner_ioc': 'BLR',
+    'loser_name': 'Coco Gauff',
+    'loser_ioc': 'USA',
+    'score': '6-2 4-6 6-3',
+    'defenses' : 6,
+    'change': 'No'},
 
 ]
 
