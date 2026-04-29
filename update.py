@@ -201,8 +201,24 @@ atp_lineage_df.to_json("data/atp_lineage.json", orient="records")
 atp_player_stats_df = pd.read_json("data/player_stats.json")
 for match in atp_new_matches:
     winner_mask = atp_player_stats_df["winner_name"] == match['winner_name']
+
+    # First-time champion: seed a zeroed row, then fall through to the normal updates.
+    if not winner_mask.any():
+        new_row = {
+            'winner_name': match['winner_name'],
+            'defenses': 0,
+            'reign_number': 0,
+            'W': 0,
+            'L': 0,
+            'total_matches': 0,
+            'win_rate': 0.0,
+            'total_defenses': 0,
+        }
+        atp_player_stats_df = pd.concat([atp_player_stats_df, pd.DataFrame([new_row])], ignore_index=True)
+        winner_mask = atp_player_stats_df["winner_name"] == match['winner_name']
+
     loser_mask = atp_player_stats_df["winner_name"] == match['loser_name']
-    
+
     atp_player_stats_df.loc[winner_mask, 'W'] += 1
     atp_player_stats_df.loc[loser_mask, 'L'] += 1
     atp_player_stats_df.loc[winner_mask, 'total_matches'] += 1
@@ -219,8 +235,24 @@ for match in atp_new_matches:
 wta_player_stats_df = pd.read_json("data/wta_player_stats.json")
 for match in wta_new_matches:
     winner_mask = wta_player_stats_df["winner_name"] == match['winner_name']
+
+    # First-time champion: seed a zeroed row, then fall through to the normal updates.
+    if not winner_mask.any():
+        new_row = {
+            'winner_name': match['winner_name'],
+            'defenses': 0,
+            'reign_number': 0,
+            'W': 0,
+            'L': 0,
+            'total_matches': 0,
+            'win_rate': 0.0,
+            'total_defenses': 0,
+        }
+        wta_player_stats_df = pd.concat([wta_player_stats_df, pd.DataFrame([new_row])], ignore_index=True)
+        winner_mask = wta_player_stats_df["winner_name"] == match['winner_name']
+
     loser_mask = wta_player_stats_df["winner_name"] == match['loser_name']
-    
+
     wta_player_stats_df.loc[winner_mask, 'W'] += 1
     wta_player_stats_df.loc[loser_mask, 'L'] += 1
     wta_player_stats_df.loc[winner_mask, 'total_matches'] += 1
