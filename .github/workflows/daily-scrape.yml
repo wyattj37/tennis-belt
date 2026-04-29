@@ -1,0 +1,54 @@
+name: Daily belt match scrape
+
+on:
+  schedule:
+    # 13:00 UTC ≈ 9am ET — late enough that yesterday's late-night matches are final.
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run scraper
+        run: python scrape.py
+
+      - name: Open PR if update.py changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain update.py)" ]; then
+            echo "No update.py changes; exiting silently."
+            exit 0
+          fi
+
+          BRANCH="auto/scrape-$(date -u +%Y%m%d-%H%M)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add update.py
+          git commit -m "Proposed belt match update $(date -u +%Y-%m-%d)"
+          git push -u origin "$BRANCH"
+
+          BODY_FILE="proposal_summary.md"
+          [ -f "$BODY_FILE" ] || echo "Proposed belt match update." > "$BODY_FILE"
+          gh pr create \
+            --title "Proposed belt match update $(date -u +%Y-%m-%d)" \
+            --body-file "$BODY_FILE" \
+            --base main \
+            --head "$BRANCH"

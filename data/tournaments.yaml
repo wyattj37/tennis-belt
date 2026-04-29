@@ -1,0 +1,573 @@
+# tourney_name -> surface
+# Seeded from matches_all.json (most recent surface per tournament).
+# Add new entries as new tournaments appear; scrape.py reads this file.
+# Keys may match ESPN's tournament name verbatim (e.g. 'Mutua Madrid Open');
+# add aliases when scrape.py reports an unknown tournament.
+
+"ATP Cup": Hard
+"ATP Finals": Hard
+"ATP Tour Finals": Hard
+"ATP Tour World Championship": Hard
+"Acapulco": Hard
+"Adelaide": Grass
+"Adelaide 1": Hard
+"Adelaide 2": Hard
+"Adelaide-1": Hard
+"Aix-En-Provence": Clay
+"Aix-en-Provence": Clay
+"Akron": Carpet
+"Albany": Hard
+"Amelia Island": Clay
+"Amersfoort": Clay
+"Amsterdam": Clay
+"Anaheim": Carpet
+"Antwerp": Hard
+"Atlanta": Clay
+"Atlanta WCT": Carpet
+"Atp Cup": Hard
+"Auckland": Grass
+"Australian Open": Hard
+"Australian Round Robin": Grass
+"Aviles": Clay
+"Avon Championships": Carpet
+"BJK Cup Playoffs: FRA vs NED": Hard
+"BJK Cup QLS R1: ROU vs POL": Hard
+"Bali": Hard
+"Baltimore": Carpet
+"Baltimore Pros": ""
+"Bangkok": Carpet
+"Banja Luka": Clay
+"Barcelona": Clay
+"Barcelona Olympics": Clay
+"Barcelona WCT": Clay
+"Barcelona-1": Clay
+"Barcelona-2": Clay
+"Barcelona-3": Clay
+"Barranquilla": Clay
+"Basel": Carpet
+"Bastad": Clay
+"Beijing": Hard
+"Beijing Olympics": Hard
+"Belgium Exho": ""
+"Belgrade": Clay
+"Berkeley": Hard
+"Berkeley WCT": Hard
+"Berlin": Clay
+"Berlin Tennis Open": Grass
+"Binghamton": Hard
+"Binghamton Pros": ""
+"Birmingham": Clay
+"Birmingham WCT": Carpet
+"Bloemfontein": Hard
+"Boca Raton": Clay
+"Bol": Clay
+"Bologna": Clay
+"Bologna WCT": Carpet
+"Bonne Bell Cup": Grass
+"Boston": Hard
+"Boston WCT": Hard
+"Boston-1": Grass
+"Bournemouth": Clay
+"Bretton Woods": Clay
+"Brighton": Carpet
+"Brisbane": Hard
+"Brisbane International": Hard
+"Bristol": Grass
+"Bristol WCT": Grass
+"Brussels": Carpet
+"Brussels WCT": Carpet
+"Bucharest": Clay
+"Budapest": Clay
+"Buenos Aires": ""
+"Buenos Aires-2": Clay
+"Canada Masters": Hard
+"Canadian Open": Hard
+"Cancun Finals": Hard
+"Cape Town": Hard
+"Caracas WCT": Hard
+"Carlsbad": Hard
+"Carlsbad Crown": Hard
+"Carta Blanca Exho": ""
+"Charleston": Clay
+"Charleston 1": Clay
+"Charlotte": Clay
+"Charlotte WCT": Clay
+"Chattanooga": Carpet
+"Chengdu": Hard
+"Chennai": Hard
+"Chicago": Carpet
+"Chichester": Grass
+"Christchurch": Grass
+"Cincinnati": Hard
+"Cincinnati Masters": Hard
+"Cologne WCT": Carpet
+"Columbus": Clay
+"Copenhagen": Carpet
+"Corpus Christi": Hard
+"Corpus Christi NTL": Hard
+"Dallas": Carpet
+"Dallas WCT": Carpet
+"Davis Cup AME F: ECU vs BRA": Clay
+"Davis Cup AME F: USA vs ARG": Carpet
+"Davis Cup AME SF: AUS vs JPN": Grass
+"Davis Cup EUR F: NZL vs AUS": Grass
+"Davis Cup EUR F: TCH vs ITA": Clay
+"Davis Cup EUR QF: ITA vs BUL": Clay
+"Davis Cup EUR QF: YUG vs SWE": Clay
+"Davis Cup EUR SF: ARG vs AUS": Clay
+"Davis Cup EUR SF: ESP vs MON": Clay
+"Davis Cup EUR SF: ESP vs USA": Clay
+"Davis Cup EUR SF: ROU vs SWE": Clay
+"Davis Cup EUR SF: SWE vs ESP": Clay
+"Davis Cup EUR SF: SWE vs FRG": Clay
+"Davis Cup EUR SF: TCH vs FRG": Clay
+"Davis Cup Finals F: AUS vs ITA": Hard
+"Davis Cup Finals F: ITA vs NED": Hard
+"Davis Cup Finals QF: ITA vs ARG": Hard
+"Davis Cup Finals QF: SRB vs GBR": Hard
+"Davis Cup Finals RR: ESP vs CAN": Hard
+"Davis Cup Finals RR: ESP vs SRB": Hard
+"Davis Cup Finals RR: SRB vs CAN": Hard
+"Davis Cup Finals SF: ITA vs AUS": Hard
+"Davis Cup Finals SF: ITA vs SRB": Hard
+"Davis Cup G1 F: CHI vs USA": Clay
+"Davis Cup G1 QF: AUT vs CRO": Clay
+"Davis Cup G1 R2: SRB vs GEO": Clay
+"Davis Cup WG F: AUS vs FRA": Grass
+"Davis Cup WG F: AUS vs SWE": Grass
+"Davis Cup WG F: FRA vs USA": Clay
+"Davis Cup WG F: FRG vs SWE": Carpet
+"Davis Cup WG F: GER vs AUS": Clay
+"Davis Cup WG F: ROU vs USA": Clay
+"Davis Cup WG F: SWE vs FRA": Hard
+"Davis Cup WG F: SWE vs USA": Clay
+"Davis Cup WG F: USA vs AUS": Clay
+"Davis Cup WG F: USA vs SUI": Hard
+"Davis Cup WG PO: AUS vs UZB": Hard
+"Davis Cup WG PO: BEL vs ISR": Clay
+"Davis Cup WG PO: CZE vs SUI": Carpet
+"Davis Cup WG PO: NED vs CRO": Clay
+"Davis Cup WG PO: SUI vs BEL": Hard
+"Davis Cup WG PO: SUI vs GBR": Clay
+"Davis Cup WG PO: SUI vs SCG": Hard
+"Davis Cup WG PO: SVK vs USA": Clay
+"Davis Cup WG QF: AUS vs MEX": Grass
+"Davis Cup WG QF: ECU vs TCH": Clay
+"Davis Cup WG QF: ITA vs USA": Clay
+"Davis Cup WG QF: NED vs USA": Hard
+"Davis Cup WG QF: RUS vs CZE": Clay
+"Davis Cup WG QF: SWE vs TCH": Carpet
+"Davis Cup WG QF: USA vs ARG": Carpet
+"Davis Cup WG QF: USA vs BEL": Hard
+"Davis Cup WG QF: USA vs CZE": Carpet
+"Davis Cup WG QF: USA vs FRA": Carpet
+"Davis Cup WG QF: USA vs SWE": Hard
+"Davis Cup WG QF: USA vs TCH": Hard
+"Davis Cup WG R1: ARG vs FRA": Clay
+"Davis Cup WG R1: ARG vs USA": Clay
+"Davis Cup WG R1: BEL vs SRB": Clay
+"Davis Cup WG R1: ESP vs FRG": Clay
+"Davis Cup WG R1: FRA vs NED": Clay
+"Davis Cup WG R1: GBR vs SWE": Carpet
+"Davis Cup WG R1: GER vs ITA": Carpet
+"Davis Cup WG R1: MEX vs USA": Hard
+"Davis Cup WG R1: ROU vs SUI": Clay
+"Davis Cup WG R1: ROU vs USA": Carpet
+"Davis Cup WG R1: RUS vs SRB": Hard
+"Davis Cup WG R1: SVK vs SWE": Clay
+"Davis Cup WG R1: ZIM vs USA": Hard
+"Davis Cup WG SF: AUS vs SWE": Hard
+"Davis Cup WG SF: AUS vs USA": Hard
+"Davis Cup WG SF: FRG vs USA": Carpet
+"Davis Cup WG SF: SRB vs ARG": Hard
+"Davis Cup WG SF: SWE vs FRA": Clay
+"Davis Cup WG SF: USA vs AUS": Hard
+"Davis Cup WG SF: USA vs SWE": Hard
+"Deerfield Beach": Hard
+"Delray Beach": Hard
+"Delray Beach WCT": Clay
+"Denver": Hard
+"Denver WCT": Carpet
+"Des Moines": Carpet
+"Detroit": Carpet
+"Detroit WCT": Carpet
+"Doha": Hard
+"Dubai": Hard
+"Durban": Hard
+"East London": Hard
+"East Rutherford": Hard
+"Eastbourne": Grass
+"Essen": Carpet
+"Essen Masters": Carpet
+"Estoril": Clay
+"Fed Cup G1 PO: SRB vs ROU": Clay
+"Fed Cup G1 RRC: SRB vs EST": Clay
+"Fed Cup G1 RRC: SRB vs SLO": Clay
+"Fed Cup G1 RRC: SRB vs SWE": Clay
+"Fed Cup QLS R1: USA vs LAT": Hard
+"Fed Cup WG F: AUS vs USA": ""
+"Fed Cup WG F: ESP vs AUS": Clay
+"Fed Cup WG F: GER vs ESP": Clay
+"Fed Cup WG F: TCH vs USA": Clay
+"Fed Cup WG F: USA vs AUS": Clay
+"Fed Cup WG F: USA vs FRG": Hard
+"Fed Cup WG PO: ITA vs USA": Clay
+"Fed Cup WG QF: ESP vs JPN": Clay
+"Fed Cup WG QF: FIN vs AUS": Clay
+"Fed Cup WG QF: FRA vs AUS": Clay
+"Fed Cup WG QF: GER vs POL": Clay
+"Fed Cup WG QF: TCH vs FRG": Hard
+"Fed Cup WG QF: TCH vs HUN": Hard
+"Fed Cup WG QF: USA vs BRA": Hard
+"Fed Cup WG QF: USA vs FRA": Clay
+"Fed Cup WG QF: USA vs ITA": Clay
+"Fed Cup WG QF: USA vs SUI": Carpet
+"Fed Cup WG R1: ARG vs USA": Clay
+"Fed Cup WG R1: BEL vs RUS": Clay
+"Fed Cup WG R1: CRO vs CZE": Clay
+"Fed Cup WG R1: ESP vs CHI": Clay
+"Fed Cup WG R1: FIN vs FRG": Hard
+"Fed Cup WG R1: GER vs AUS": Clay
+"Fed Cup WG R1: GER vs NZL": Clay
+"Fed Cup WG R1: GER vs SUI": Hard
+"Fed Cup WG R1: ISR vs RUS": Hard
+"Fed Cup WG R1: RUS vs BLR": Clay
+"Fed Cup WG R1: SLO vs USA": Clay
+"Fed Cup WG R1: TCH vs GRE": Hard
+"Fed Cup WG R1: USA vs AUT": Grass
+"Fed Cup WG R1: USA vs CHN": Clay
+"Fed Cup WG R1: USA vs INA": Hard
+"Fed Cup WG R1: USA vs ISR": Carpet
+"Fed Cup WG R1: USA vs KOR": ""
+"Fed Cup WG R2: DEN vs AUS": Clay
+"Fed Cup WG R2: ESP vs ARG": Clay
+"Fed Cup WG R2: GER vs NED": Clay
+"Fed Cup WG R2: JPN vs FRG": Hard
+"Fed Cup WG R2: TCH vs SUI": Hard
+"Fed Cup WG R2: USA vs ESP": Clay
+"Fed Cup WG R2: USA vs FRG": Clay
+"Fed Cup WG R2: USA vs MEX": Hard
+"Fed Cup WG R2: USA vs NZL": ""
+"Fed Cup WG R2: USA vs SUI": Grass
+"Fed Cup WG R2: USA vs YUG": Carpet
+"Fed Cup WG SF: ARG vs AUS": Clay
+"Fed Cup WG SF: AUS vs GER": Hard
+"Fed Cup WG SF: BLR vs AUS": Hard
+"Fed Cup WG SF: FRA vs USA": Clay
+"Fed Cup WG SF: GBR vs AUS": Clay
+"Fed Cup WG SF: GER vs ESP": Clay
+"Fed Cup WG SF: GER vs USA": Clay
+"Fed Cup WG SF: TCH vs BUL": Hard
+"Fed Cup WG SF: USA vs FRG": Clay
+"Fed Cup WG SF: USA vs GBR": ""
+"Fed Cup WG SF: USA vs NED": Carpet
+"Fed Cup WG SF: USA vs RSA": Grass
+"Fed Cup WG SF: USA vs RUS": Hard
+"Fed Cup WG SF: USA vs TCH": Hard
+"Fed Cup WG SF: USA vs URS": Clay
+"Fed Cup WG W1: RUS vs CRO": Carpet
+"Fed Cup WG1 PO: AUT vs GER": Clay
+"Fed Cup WG1 PO: SUI vs ARG": Carpet
+"Fed Cup WG1 QF: JPN vs GER": Hard
+"Fed Cup WG1 QF: USA vs CRO": Clay
+"Fed Cup WG1 SF: RUS vs USA": Clay
+"Fed Cup WG2 QF: SVK vs SUI": Carpet
+"Filderstadt": Hard
+"Florence": Hard
+"Forest Hills": Clay
+"Forest Hills WCT": Clay
+"Fort Lauderdale": Clay
+"Fort Lauderdale Pro": Clay
+"Fort Myers": Hard
+"Fort Worth": Hard
+"Fort Worth Finals": Hard
+"Fort Worth NTL": Hard
+"Fort Worth Pros": Clay
+"Frankfurt": Carpet
+"French Open": Clay
+"Frinton-On-Sea": Grass
+"Fulham": Clay
+"Geneva": Clay
+"Gippsland Trophy": Hard
+"Gold Coast": Hard
+"Grand Slam Cup": Hard
+"Gstaad": Clay
+"Guadalajara 2": Hard
+"Guadalajara Finals": Hard
+"Guildford": Clay
+"Halle": Grass
+"Hamburg": Clay
+"Hamburg Masters": Clay
+"Hampton": Carpet
+"Haverford": Grass
+"Hilton Head": Clay
+"Hilton Head Invitational": Hard
+"Hilversum": Clay
+"Hobart": Hard
+"Hollywood": Clay
+"Hong Kong": Hard
+"Hong Kong Exho": ""
+"Houston": Clay
+"Houston WCT": Clay
+"Hurlingham": Clay
+"Indian Wells": Hard
+"Indian Wells Masters": Hard
+"Indianapolis": Hard
+"Indianapolis Indoors": Carpet
+"Istanbul": Clay
+"Italian Open": Clay
+"Japanese Championships": Carpet
+"Jersey Shore": Carpet
+"Johannesburg": Hard
+"Johannesburg-2": Hard
+"Kansas City": Carpet
+"Kansas City-2": Hard
+"Key Biscayne": Hard
+"Kingston": Hard
+"Kitzbuhel": Clay
+"La Paz NTL": Clay
+"La Quinta": Hard
+"Lakeway": Hard
+"Lakeway WCT": Hard
+"Landover": Carpet
+"Las Vegas": Hard
+"Las Vegas WCT": Carpet
+"Laver Cup": Hard
+"Leipzig": Carpet
+"Lexington": Hard
+"Lima NTL": Clay
+"Linz": Carpet
+"Lisbon": Clay
+"Little Rock": Hard
+"London": Carpet
+"London / Queen's Club": Grass
+"London Olympics": Grass
+"London Rothmans": Grass
+"London WCT": Carpet
+"London-1": Carpet
+"London-2": Carpet
+"London-3": Carpet
+"Long Beach": Carpet
+"Long Island": Hard
+"Los Angeles": Hard
+"Los Angeles NTL": Carpet
+"Los Angeles-1": Hard
+"Los Angeles-2": Hard
+"Louisville": Clay
+"Louisville WCT": Clay
+"Lugano": Clay
+"Luxembourg": Hard
+"Lyon": Carpet
+"Macon": Carpet
+"Madrid": Clay
+"Madrid Masters": Clay
+"Madrid Open": Hard
+"Mutua Madrid Open": Hard
+"Madrid-1": Clay
+"Madrid-2": Clay
+"Mahwah": Hard
+"Mallorca": Grass
+"Manchester Indoors": Hard
+"Manhattan Beach": Hard
+"Marco Island": Clay
+"Marseille": Hard
+"Masters": Hard
+"Masters Cup": Hard
+"Maui": Hard
+"Melbourne": Grass
+"Memphis": Hard
+"Metz": Hard
+"Mexico City WCT": Carpet
+"Miami": Hard
+"Miami Beach": Clay
+"Miami Masters": Hard
+"Miami Open": Hard
+"Midland": Hard
+"Midland NTL": Hard
+"Milan": Carpet
+"Milan WCT": Carpet
+"Milwaukee": Carpet
+"Minneapolis": Carpet
+"Mission Viejo": Hard
+"Monte Carlo": Clay
+"Monte Carlo Masters": Clay
+"Monte-Carlo": Clay
+"Monte-Carlo Masters": Hard
+"Monte-Carlo WCT": Clay
+"Monterrey WCT": Carpet
+"Montreal": Hard
+"Moscow": Hard
+"Munich": Clay
+"Munich WCT": Carpet
+"Nashville": Clay
+"Nations Cup": Clay
+"New Haven": Hard
+"New Orleans": Carpet
+"New Orleans WCT": Carpet
+"New South Wales": Grass
+"New York": Carpet
+"New York NTL": Carpet
+"New York-1": Carpet
+"New York-2": Carpet
+"New York-3": Carpet
+"Newport": Grass
+"Nice": Clay
+"North Conway": Clay
+"Nottingham": Grass
+"Nottingham Round Robin": Grass
+"Oakland": Carpet
+"Ocean City": Carpet
+"Oklahoma City": Carpet
+"Olympics": Hard
+"Omaha": Carpet
+"Orlando": Clay
+"Orlando WCT": Hard
+"Osaka": Hard
+"Ostrava": Hard
+"Palermo": Clay
+"Palm Springs": Hard
+"Paramus": Hard
+"Paris": Carpet
+"Paris Masters": Carpet
+"Paris Olympics": Clay
+"Paris-1": Clay
+"Paris-2": Clay
+"Pepsi Grand Slam": Clay
+"Perth": ""
+"Perth Scotland": Carpet
+"Perugia": Clay
+"Philadelphia": Carpet
+"Philadelphia WCT": Carpet
+"Phoenix": Hard
+"Pompano Beach": Clay
+"Port Elizabeth": Hard
+"Port Talbot": Carpet
+"Prague": Clay
+"Princeton": Carpet
+"Qatar Open": Hard
+"Quebec WCT": Carpet
+"Queen's Club": Grass
+"Queen's Indoors": Carpet
+"Rancho Mirage": Hard
+"Reggio Emilia": Clay
+"Richmond": Clay
+"Richmond WCT": Carpet
+"Rio Olympics": Hard
+"Riyadh Finals": Hard
+"Rochester": Carpet
+"Roland Garros": Clay
+"Rome": Clay
+"Rome Masters": Clay
+"Rome WCT": Clay
+"Rotterdam": Carpet
+"Rotterdam WCT": Carpet
+"Salisbury": Carpet
+"San Antonio": Hard
+"San Diego": Hard
+"San Diego Exho": ""
+"San Francisco": Hard
+"San Jose": Hard
+"San Juan": Hard
+"San Marino": Clay
+"Sao Paulo NTL-2": Clay
+"Sao Paulo WCT": Carpet
+"Sarasota": Carpet
+"Schenectady": Hard
+"Scottsdale": Hard
+"Seattle": Carpet
+"Seoul Olympics": Hard
+"Shanghai": Hard
+"Shanghai Masters": Hard
+"Shenzhen": Hard
+"Shenzhen Finals": Hard
+"Singapore": Carpet
+"Sopot": Clay
+"South Orange": Grass
+"St Petersburg": Clay
+"St. Louis": Hard
+"St. Louis Pros": ""
+"St. Louis WCT": Carpet
+"St. Petersburg": Clay
+"St. Poelten": Clay
+"Stanford": Hard
+"Stockholm": Hard
+"Stockholm Masters": Carpet
+"Stockholm-2": Hard
+"Strasbourg": Clay
+"Strasbourg WCT": Carpet
+"Stratton Mountain": Hard
+"Stuttgart": Clay
+"Stuttgart Indoor": Carpet
+"Stuttgart Masters": Hard
+"Stuttgart Outdoor": Clay
+"Stuttgart-1": Carpet
+"Surbiton": Grass
+"Sydney": Hard
+"Sydney Indoor": Hard
+"Sydney Indoors 2": Carpet
+"Sydney Outdoor": Hard
+"Sydney-1": Hard
+"Sydney-2": Grass
+"Taipei": Carpet
+"Tampa": Clay
+"Tehran WCT": Clay
+"Tel Aviv": Hard
+"Tennis Champions Classic": Carpet
+"Tennis Masters Cup": Hard
+"Tianjin": Hard
+"Tokyo": Hard
+"Tokyo Emeron Cup": Hard
+"Tokyo Gunze": Carpet
+"Tokyo Indoor": Carpet
+"Tokyo Lion Cup": Carpet
+"Tokyo Nichirei": Hard
+"Tokyo Olympics": Hard
+"Tokyo Outdoor": Hard
+"Tokyo Pan Pacific": Carpet
+"Tokyo WCT": Carpet
+"Tokyo-1": Hard
+"Tokyo-2": Carpet
+"Toronto": Hard
+"Toronto ": Hard
+"Toronto WCT": Clay
+"Toronto-1": Carpet
+"Toronto-2": Clay
+"Torquay": Carpet
+"Tour Finals": Hard
+"Tucson": Hard
+"Tulsa": Clay
+"US Open": Hard
+"Umag": Clay
+"United Cup": Hard
+"Us Open": Hard
+"Valencia": Hard
+"Vancouver WCT": Carpet
+"Vienna": Hard
+"Virginia Slims Championships": Carpet
+"Virginia Slims Championships 1": Carpet
+"Virginia Slims Championships 2": Carpet
+"WCT Aetna World Cup": Carpet
+"WCT Challenge Cup": Carpet
+"WCT Finals": Carpet
+"WCT Invitational": Carpet
+"WTA Championships": Hard
+"WTA Finals": Hard
+"WTA Tour Championships": Carpet
+"Warsaw": Clay
+"Washington": Hard
+"Washington DC": Carpet
+"Washington WCT": Clay
+"Washington-1": Carpet
+"Washington-2": Clay
+"Wembley": Carpet
+"Wembley NTL-2": Hard
+"Wembley-3": Hard
+"Wightman Cup": Hard
+"Wimbledon": Grass
+"Worcester": Carpet
+"World Invitational Tennis Classic": Clay
+"World Team Cup": Clay
+"Wuhan": Hard
+"Zurich": Hard
+"s Hertogenbosch": Grass
+"s-Hertogenbosch": Grass
