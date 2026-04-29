@@ -265,6 +265,19 @@ for match in wta_new_matches:
     else:
         wta_player_stats_df.loc[winner_mask, 'total_defenses'] += 1
 
+# Recompute Consec. Defenses (max consecutive defenses in any single reign) from
+# the lineage. Preserves seed values that exceed the lineage max (e.g. reigns
+# that predate the tracked history).
+for stats_df, lineage_df in [(atp_player_stats_df, atp_lineage_df),
+                             (wta_player_stats_df, wta_lineage_df)]:
+    lineage_max = lineage_df.groupby('holder')['defenses'].max()
+    for holder, max_d in lineage_max.items():
+        mask = stats_df['winner_name'] == holder
+        if mask.any():
+            current = int(stats_df.loc[mask, 'defenses'].iloc[0])
+            if int(max_d) > current:
+                stats_df.loc[mask, 'defenses'] = int(max_d)
+
 atp_player_stats_df.to_json("data/player_stats.json", orient="records")
 wta_player_stats_df.to_json("data/wta_player_stats.json", orient="records")
 
