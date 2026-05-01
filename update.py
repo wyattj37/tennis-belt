@@ -19,6 +19,19 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
+    {'tourney_name': 'Mutua Madrid Open',
+    'round': 'SF',
+    'surface': 'Hard',
+    'tourney_date': '2026-04-30',
+    'winner_name': 'Mirra Andreeva',
+    'winner_ioc': 'RUS',
+    'loser_name': 'Hailey Baptiste',
+    'loser_ioc': 'USA',
+    'score': '6-4 7-6(8)',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
 
 ]
 
