@@ -4,6 +4,19 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
+    {'tourney_name': 'Mutua Madrid Open',
+    'round': 'SF',
+    'surface': 'Hard',
+    'tourney_date': '2026-05-01',
+    'winner_name': 'Jannik Sinner',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Arthur Fils',
+    'loser_ioc': 'FRA',
+    'score': '6-2 6-4',
+    'defenses': 16,
+    'change': 'No'
+    },
+
    
 ]
 
