@@ -9,6 +9,19 @@ atp_new_matches = [
 
 wta_new_matches = [
     {'tourney_name': 'Mutua Madrid Open',
+    'round': 'F',
+    'surface': 'Hard',
+    'tourney_date': '2026-05-02',
+    'winner_name': 'Marta Kostyuk',
+    'winner_ioc': 'UKR',
+    'loser_name': 'Mirra Andreeva',
+    'loser_ioc': 'RUS',
+    'score': '6-3 7-5',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
+    {'tourney_name': 'Mutua Madrid Open',
     'round': 'SF',
     'surface': 'Hard',
     'tourney_date': '2026-04-30',
