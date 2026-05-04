@@ -5,33 +5,20 @@ import subprocess
 
 atp_new_matches = [
     {'tourney_name': 'Mutua Madrid Open',
-    'round': 'SF',
+    'round': 'F',
     'surface': 'Hard',
-    'tourney_date': '2026-05-01',
+    'tourney_date': '2026-05-03',
     'winner_name': 'Jannik Sinner',
     'winner_ioc': 'ITA',
-    'loser_name': 'Arthur Fils',
-    'loser_ioc': 'FRA',
-    'score': '6-2 6-4',
-    'defenses': 16,
+    'loser_name': 'Alexander Zverev',
+    'loser_ioc': 'GER',
+    'score': '6-1 6-2',
+    'defenses': 17,
     'change': 'No'
     },
-   
 ]
 
 wta_new_matches = [
-    {'tourney_name': 'Mutua Madrid Open',
-    'round': 'F',
-    'surface': 'Hard',
-    'tourney_date': '2026-05-02',
-    'winner_name': 'Marta Kostyuk',
-    'winner_ioc': 'UKR',
-    'loser_name': 'Mirra Andreeva',
-    'loser_ioc': 'RUS',
-    'score': '6-3 7-5',
-    'defenses': 0,
-    'change': 'Yes'
-    },
 
 ]
 
