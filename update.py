@@ -5,6 +5,19 @@ import subprocess
 
 atp_new_matches = [
     {'tourney_name': 'Mutua Madrid Open',
+    'round': 'F',
+    'surface': 'Hard',
+    'tourney_date': '2026-05-03',
+    'winner_name': 'Jannik Sinner',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Alexander Zverev',
+    'loser_ioc': 'GER',
+    'score': '6-1 6-2',
+    'defenses': 17,
+    'change': 'No'
+    },
+
+    {'tourney_name': 'Mutua Madrid Open',
     'round': 'SF',
     'surface': 'Hard',
     'tourney_date': '2026-05-01',
