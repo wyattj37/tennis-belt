@@ -44,6 +44,32 @@ ROUND_MAP = {
     "Round Robin": "RR",
 }
 
+# Sizes for the last numbered round before QF, in order: R16, R32, R64, R128.
+NUMBERED_ROUND_SIZES = ["R16", "R32", "R64", "R128"]
+
+
+def build_round_map(event: dict) -> dict[str, str]:
+    """ESPN labels main-draw rounds as 'Round 1', 'Round 2', ... whose meaning
+    depends on draw size (e.g. in a 32-draw 'Round 2' = R16; in a 96-draw it = R64).
+    The last numbered round before QF is always R16, so map relative to the max."""
+    nums = set()
+    for grp in event.get("groupings", []):
+        for comp in grp.get("competitions", []):
+            disp = comp.get("round", {}).get("displayName", "")
+            if disp.startswith("Round ") and "Qualifying" not in disp:
+                tail = disp[len("Round "):].strip()
+                if tail.isdigit():
+                    nums.add(int(tail))
+    if not nums:
+        return {}
+    max_n = max(nums)
+    out: dict[str, str] = {}
+    for n in nums:
+        idx = max_n - n
+        if 0 <= idx < len(NUMBERED_ROUND_SIZES):
+            out[f"Round {n}"] = NUMBERED_ROUND_SIZES[idx]
+    return out
+
 
 def extract_ioc(athlete: dict) -> str:
     """ESPN's flag.alt is inconsistent ('USA' vs 'Italy'); the slug in flag.href
@@ -110,12 +136,13 @@ def find_belt_match(events: list, holder: str, surfaces: dict, today_iso: str) -
     note: str | None = None
     for event in events:
         tourney_name = event.get("name", "")
+        event_round_map = build_round_map(event)
         for grp in event.get("groupings", []):
             for comp in grp.get("competitions", []):
                 round_disp = comp.get("round", {}).get("displayName", "")
                 if "Qualifying" in round_disp:
                     continue
-                round_short = ROUND_MAP.get(round_disp)
+                round_short = ROUND_MAP.get(round_disp) or event_round_map.get(round_disp)
                 if not round_short:
                     continue
                 status_type = comp.get("status", {}).get("type", {})
@@ -200,7 +227,10 @@ def render_dict(match: dict) -> str:
     lines = ["    {"]
     for i, k in enumerate(keys):
         v = match[k]
-        rendered = repr(v) if not isinstance(v, str) else f"'{v}'"
+        if isinstance(v, str) and "'" not in v:
+            rendered = f"'{v}'"
+        else:
+            rendered = repr(v)
         suffix = "," if i < len(keys) - 1 else ""
         if i == 0:
             lines[0] = f"    {{'{k}': {rendered}{suffix}"
