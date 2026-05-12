@@ -30,6 +30,36 @@ wta_df = pd.read_json("data/wta_matches_all.json")
 atp_df = pd.concat([atp_new_df[::-1], atp_df], ignore_index=True)
 wta_df = pd.concat([wta_new_df[::-1], wta_df], ignore_index=True)
 
+def validate_matches(df, tour):
+    dup_cols = ['tourney_name', 'round', 'winner_name', 'loser_name', 'tourney_date']
+    dups = df[df.duplicated(subset=dup_cols, keep=False)]
+    if not dups.empty:
+        raise SystemExit(f"[{tour}] Duplicate match(es) detected:\n{dups[dup_cols + ['defenses']]}")
+
+    # Defenses should follow: change='Yes' -> 0; change='No' -> next_row_defenses + 1
+    # (walking from newest [index 0] to oldest).
+    for i in range(len(df) - 1):
+        row, nxt = df.iloc[i], df.iloc[i + 1]
+        if row['change'] == 'Yes':
+            # change='Yes' rows may have defenses=0 or be left blank
+            if pd.isna(row['defenses']) or row['defenses'] in (0, ''):
+                continue
+            expected = 0
+        elif nxt['change'] == 'Yes':
+            expected = 1
+        else:
+            expected = nxt['defenses'] + 1
+        if row['defenses'] != expected:
+            raise SystemExit(
+                f"[{tour}] Defenses sequence broken at row {i} "
+                f"({row['winner_name']} vs {row['loser_name']} @ {row['tourney_name']} {row['round']}): "
+                f"defenses={row['defenses']}, expected={expected}. "
+                f"Likely a missed match or duplicate."
+            )
+
+validate_matches(atp_df, 'ATP')
+validate_matches(wta_df, 'WTA')
+
 atp_df.to_json("data/matches_all.json", orient="records")
 wta_df.to_json("data/wta_matches_all.json", orient="records")
 
