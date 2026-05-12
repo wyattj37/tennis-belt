@@ -4,19 +4,6 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
-    {'tourney_name': "Internazionali BNL d'Italia",
-    'round': 'R32',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-11',
-    'winner_name': 'Jannik Sinner',
-    'winner_ioc': 'ITA',
-    'loser_name': 'Alexei Popyrin',
-    'loser_ioc': 'AUS',
-    'score': '6-2 6-0',
-    'defenses': 19,
-    'change': 'No'
-    },
-
 
 ]
 
