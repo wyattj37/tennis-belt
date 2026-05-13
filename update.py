@@ -17,7 +17,6 @@ atp_new_matches = [
     'change': 'No'
     },
 
-
 ]
 
 wta_new_matches = [
