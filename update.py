@@ -5,44 +5,6 @@ import subprocess
 
 atp_new_matches = [
 
-    {'tourney_name': "Internazionali BNL d'Italia",
-    'round': 'QF',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-14',
-    'winner_name': 'Jannik Sinner',
-    'winner_ioc': 'ITA',
-    'loser_name': 'Andrey Rublev',
-    'loser_ioc': 'RUS',
-    'score': '6-2 6-4',
-    'defenses': 21,
-    'change': 'No'
-    },
-
-    {'tourney_name': "Internazionali BNL d'Italia",
-    'round': 'SF',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-16',
-    'winner_name': 'Jannik Sinner',
-    'winner_ioc': 'ITA',
-    'loser_name': 'Daniil Medvedev',
-    'loser_ioc': 'RUS',
-    'score': '6-2 5-7 6-4',
-    'defenses': 22,
-    'change': 'No'
-    },
-
-    {'tourney_name': "Internazionali BNL d'Italia",
-    'round': 'F',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-17',
-    'winner_name': 'Jannik Sinner',
-    'winner_ioc': 'ITA',
-    'loser_name': 'Casper Ruud',
-    'loser_ioc': 'NOR',
-    'score': '6-4 6-4',
-    'defenses': 23,
-    'change': 'No'
-    },
 
 ]
 
