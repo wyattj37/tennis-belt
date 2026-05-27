@@ -17,8 +17,6 @@ atp_new_matches = [
     'change': 'No'
     },
 
-
-
 ]
 
 wta_new_matches = [
@@ -32,19 +30,6 @@ wta_new_matches = [
     'loser_ioc': 'USA',
     'score': '6-7(4) 6-3 6-3',
     'defenses': 2,
-    'change': 'No'
-    },
-
-    {'tourney_name': 'Roland Garros',
-    'round': 'R128',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-24',
-    'winner_name': 'Marta Kostyuk',
-    'winner_ioc': 'UKR',
-    'loser_name': 'Oksana Selekhmeteva',
-    'loser_ioc': 'RUS',
-    'score': '6-2 6-3',
-    'defenses': 1,
     'change': 'No'
     },
 
