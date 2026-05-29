@@ -5,6 +5,19 @@ import subprocess
 
 atp_new_matches = [
     {'tourney_name': 'Roland Garros',
+    'round': 'R64',
+    'surface': 'Clay',
+    'tourney_date': '2026-05-28',
+    'winner_name': 'Juan Manuel Cerundolo',
+    'winner_ioc': 'ARG',
+    'loser_name': 'Jannik Sinner',
+    'loser_ioc': 'ITA',
+    'score': '3-6 2-6 7-5 6-1 6-1',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
+    {'tourney_name': 'Roland Garros',
     'round': 'R128',
     'surface': 'Clay',
     'tourney_date': '2026-05-26',
@@ -20,6 +33,19 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
+    {'tourney_name': 'Roland Garros',
+    'round': 'R32',
+    'surface': 'Clay',
+    'tourney_date': '2026-05-29',
+    'winner_name': 'Marta Kostyuk',
+    'winner_ioc': 'UKR',
+    'loser_name': 'Viktorija Golubic',
+    'loser_ioc': 'SUI',
+    'score': '6-4 6-3',
+    'defenses': 3,
+    'change': 'No'
+    },
+
     {'tourney_name': 'Roland Garros',
     'round': 'R64',
     'surface': 'Clay',
