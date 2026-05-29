@@ -16,20 +16,6 @@ atp_new_matches = [
     'defenses': 0,
     'change': 'Yes'
     },
-
-    {'tourney_name': 'Roland Garros',
-    'round': 'R128',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-26',
-    'winner_name': 'Jannik Sinner',
-    'winner_ioc': 'ITA',
-    'loser_name': 'Clement Tabur',
-    'loser_ioc': 'FRA',
-    'score': '6-1 6-3 6-4',
-    'defenses': 24,
-    'change': 'No'
-    },
-
 ]
 
 wta_new_matches = [
@@ -43,19 +29,6 @@ wta_new_matches = [
     'loser_ioc': 'SUI',
     'score': '6-4 6-3',
     'defenses': 3,
-    'change': 'No'
-    },
-
-    {'tourney_name': 'Roland Garros',
-    'round': 'R64',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-27',
-    'winner_name': 'Marta Kostyuk',
-    'winner_ioc': 'UKR',
-    'loser_name': 'Katie Volynets',
-    'loser_ioc': 'USA',
-    'score': '6-7(4) 6-3 6-3',
-    'defenses': 2,
     'change': 'No'
     },
 
