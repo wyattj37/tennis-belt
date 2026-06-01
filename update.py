@@ -16,34 +16,10 @@ atp_new_matches = [
     'defenses': 0,
     'change': 'Yes'
     },
-
-    {'tourney_name': 'Roland Garros',
-    'round': 'R32',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-30',
-    'winner_name': 'Juan Manuel Cerundolo',
-    'winner_ioc': 'ARG',
-    'loser_name': 'Martin Landaluce',
-    'loser_ioc': 'ESP',
-    'score': '6-4 6-7(7) 7-6(4) 6-7(4) 7-6(8)',
-    'defenses': 1,
-    'change': 'No'
-    },
 ]
 
 wta_new_matches = [
-    {'tourney_name': 'Roland Garros',
-    'round': 'R16',
-    'surface': 'Clay',
-    'tourney_date': '2026-05-31',
-    'winner_name': 'Marta Kostyuk',
-    'winner_ioc': 'UKR',
-    'loser_name': 'Iga Swiatek',
-    'loser_ioc': 'POL',
-    'score': '7-5 6-1',
-    'defenses': 4,
-    'change': 'No'
-    },
+
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
