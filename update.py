@@ -19,6 +19,19 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
+    {'tourney_name': 'Roland Garros',
+    'round': 'QF',
+    'surface': 'Clay',
+    'tourney_date': '2026-06-02',
+    'winner_name': 'Marta Kostyuk',
+    'winner_ioc': 'UKR',
+    'loser_name': 'Elina Svitolina',
+    'loser_ioc': 'UKR',
+    'score': '6-3 2-6 6-2',
+    'defenses': 5,
+    'change': 'No'
+    },
+
 
 ]
 
