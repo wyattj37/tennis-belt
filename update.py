@@ -4,12 +4,23 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
-    # NEEDS MANUAL HANDLING: 2026-06-03 Roland Garros QF: Matteo Berrettini vs Matteo Arnaldi — Retired
-
-
+   
+    {'tourney_name': 'Roland Garros',
+    'round': 'QF',
+    'surface': 'Clay',
+    'tourney_date': '2026-06-03',
+    'winner_name': 'Matteo Arnaldi',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Matteo Berrettini',
+    'loser_ioc': 'ITA',
+    'score': '7-5 5-2 RET',
+    'defenses': 0,
+    'change': 'Yes'
+    },
 ]
 
 wta_new_matches = [
+   
     {'tourney_name': 'Roland Garros',
     'round': 'SF',
     'surface': 'Clay',
@@ -21,19 +32,6 @@ wta_new_matches = [
     'score': '6-1 6-3',
     'defenses': 0,
     'change': 'Yes'
-    },
-
-    {'tourney_name': 'Roland Garros',
-    'round': 'QF',
-    'surface': 'Clay',
-    'tourney_date': '2026-06-02',
-    'winner_name': 'Marta Kostyuk',
-    'winner_ioc': 'UKR',
-    'loser_name': 'Elina Svitolina',
-    'loser_ioc': 'UKR',
-    'score': '6-3 2-6 6-2',
-    'defenses': 5,
-    'change': 'No'
     },
 
 ]
