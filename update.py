@@ -4,6 +4,8 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
+    # NEEDS MANUAL HANDLING: 2026-06-05 Roland Garros SF: Matteo Arnaldi vs Flavio Cobolli — Walkover
+
    
     {'tourney_name': 'Roland Garros',
     'round': 'QF',
