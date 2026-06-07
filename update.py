@@ -20,6 +20,19 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
+    {'tourney_name': 'Roland Garros',
+    'round': 'F',
+    'surface': 'Clay',
+    'tourney_date': '2026-06-06',
+    'winner_name': 'Mirra Andreeva',
+    'winner_ioc': 'RUS',
+    'loser_name': 'Maja Chwalinska',
+    'loser_ioc': 'POL',
+    'score': '6-3 6-2',
+    'defenses': 1,
+    'change': 'No'
+    },
+
    
     {'tourney_name': 'Roland Garros',
     'round': 'SF',
