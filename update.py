@@ -5,18 +5,6 @@ import subprocess
 
 atp_new_matches = [
    
-    {'tourney_name': 'Roland Garros',
-    'round': 'QF',
-    'surface': 'Clay',
-    'tourney_date': '2026-06-03',
-    'winner_name': 'Matteo Arnaldi',
-    'winner_ioc': 'ITA',
-    'loser_name': 'Matteo Berrettini',
-    'loser_ioc': 'ITA',
-    'score': '7-5 5-2 RET',
-    'defenses': 0,
-    'change': 'Yes'
-    },
 ]
 
 wta_new_matches = [
@@ -32,21 +20,6 @@ wta_new_matches = [
     'defenses': 1,
     'change': 'No'
     },
-
-   
-    {'tourney_name': 'Roland Garros',
-    'round': 'SF',
-    'surface': 'Clay',
-    'tourney_date': '2026-06-04',
-    'winner_name': 'Mirra Andreeva',
-    'winner_ioc': 'RUS',
-    'loser_name': 'Marta Kostyuk',
-    'loser_ioc': 'UKR',
-    'score': '6-1 6-3',
-    'defenses': 0,
-    'change': 'Yes'
-    },
-
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
