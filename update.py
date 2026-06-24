@@ -4,10 +4,36 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
+    {'tourney_name': 'Lexus Eastbourne Open',
+    'round': 'R32',
+    'surface': '',
+    'tourney_date': '2026-06-23',
+    'winner_name': 'Giles Hussey',
+    'winner_ioc': 'GBR',
+    'loser_name': 'Matteo Arnaldi',
+    'loser_ioc': 'ITA',
+    'score': '6-4 6-2',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
    
 ]
 
 wta_new_matches = [
+    {'tourney_name': 'Bad Homburg Open powered by Solarwatt',
+    'round': 'R16',
+    'surface': '',
+    'tourney_date': '2026-06-24',
+    'winner_name': 'Ekaterina Alexandrova',
+    'winner_ioc': 'RUS',
+    'loser_name': 'Mirra Andreeva',
+    'loser_ioc': 'RUS',
+    'score': '6-3 6-4',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
     {'tourney_name': 'Roland Garros',
     'round': 'F',
     'surface': 'Clay',
