@@ -5,8 +5,34 @@ import subprocess
 
 atp_new_matches = [
     {'tourney_name': 'Lexus Eastbourne Open',
+    'round': 'Q1',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-20',
+    'winner_name': 'Matteo Arnaldi',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Alastair Gray',
+    'loser_ioc': 'GBR',
+    'score': '7-6(3) 7-6(4)',
+    'defenses': 1,
+    'change': 'No'
+    },
+
+    {'tourney_name': 'Lexus Eastbourne Open',
+    'round': 'Q2',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-21',
+    'winner_name': 'Matteo Arnaldi',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Toby Samuel',
+    'loser_ioc': 'GBR',
+    'score': '3-6 6-4 6-4',
+    'defenses': 2,
+    'change': 'No'
+    },
+
+    {'tourney_name': 'Lexus Eastbourne Open',
     'round': 'R32',
-    'surface': '',
+    'surface': 'Grass',
     'tourney_date': '2026-06-23',
     'winner_name': 'Giles Hussey',
     'winner_ioc': 'GBR',
@@ -17,13 +43,63 @@ atp_new_matches = [
     'change': 'Yes'
     },
 
-   
+    {'tourney_name': 'Lexus Eastbourne Open',
+    'round': 'R16',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-24',
+    'winner_name': 'Quentin Halys',
+    'winner_ioc': 'FRA',
+    'loser_name': 'Giles Hussey',
+    'loser_ioc': 'GBR',
+    'score': '6-1 7-5',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
+    {'tourney_name': 'Lexus Eastbourne Open',
+    'round': 'QF',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-25',
+    'winner_name': 'Ugo Humbert',
+    'winner_ioc': 'FRA',
+    'loser_name': 'Quentin Halys',
+    'loser_ioc': 'FRA',
+    'score': '6-3 6-4',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
+    {'tourney_name': 'Lexus Eastbourne Open',
+    'round': 'SF',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-26',
+    'winner_name': 'Ugo Humbert',
+    'winner_ioc': 'FRA',
+    'loser_name': 'Jack Draper',
+    'loser_ioc': 'GBR',
+    'score': '7-5 6-3',
+    'defenses': 1,
+    'change': 'No'
+    },
+
+    {'tourney_name': 'Lexus Eastbourne Open',
+    'round': 'F',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-27',
+    'winner_name': 'Zizou Bergs',
+    'winner_ioc': 'BEL',
+    'loser_name': 'Ugo Humbert',
+    'loser_ioc': 'FRA',
+    'score': '3-6 6-1 6-4',
+    'defenses': 0,
+    'change': 'Yes'
+    },
 ]
 
 wta_new_matches = [
-    {'tourney_name': 'Bad Homburg Open powered by Solarwatt',
+    {'tourney_name': 'Bad Homburg Open',
     'round': 'R16',
-    'surface': '',
+    'surface': 'Grass',
     'tourney_date': '2026-06-24',
     'winner_name': 'Ekaterina Alexandrova',
     'winner_ioc': 'RUS',
@@ -34,17 +110,43 @@ wta_new_matches = [
     'change': 'Yes'
     },
 
-    {'tourney_name': 'Roland Garros',
-    'round': 'F',
-    'surface': 'Clay',
-    'tourney_date': '2026-06-06',
-    'winner_name': 'Mirra Andreeva',
-    'winner_ioc': 'RUS',
-    'loser_name': 'Maja Chwalinska',
-    'loser_ioc': 'POL',
-    'score': '6-3 6-2',
+    {'tourney_name': 'Bad Homburg Open',
+    'round': 'QF',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-25',
+    'winner_name': 'Naomi Osaka',
+    'winner_ioc': 'JPN',
+    'loser_name': 'Ekaterina Alexandrova',
+    'loser_ioc': 'RUS',
+    'score': '6-2 6-2',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
+    {'tourney_name': 'Bad Homburg Open',
+    'round': 'SF',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-26',
+    'winner_name': 'Naomi Osaka',
+    'winner_ioc': 'JPN',
+    'loser_name': 'Wang Xinyu',
+    'loser_ioc': 'CHN',
+    'score': '6-3 6-3',
     'defenses': 1,
     'change': 'No'
+    },
+
+    {'tourney_name': 'Bad Homburg Open',
+    'round': 'F',
+    'surface': 'Grass',
+    'tourney_date': '2026-06-27',
+    'winner_name': 'Karolína Muchova',
+    'winner_ioc': 'CZE',
+    'loser_name': 'Naomi Osaka',
+    'loser_ioc': 'JPN',
+    'score': '6-1 1-0 RET',
+    'defenses': 0,
+    'change': 'Yes'
     },
 ]
 
