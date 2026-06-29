@@ -21,6 +21,19 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
+    {'tourney_name': 'Bad Homburg Open powered by Solarwatt',
+    'round': 'R16',
+    'surface': '',
+    'tourney_date': '2026-06-24',
+    'winner_name': 'Ekaterina Alexandrova',
+    'winner_ioc': 'RUS',
+    'loser_name': 'Mirra Andreeva',
+    'loser_ioc': 'RUS',
+    'score': '6-3 6-4',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
     {'tourney_name': 'Roland Garros',
     'round': 'F',
     'surface': 'Clay',
