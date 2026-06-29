@@ -4,6 +4,19 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
+    {'tourney_name': 'Lexus Eastbourne Open',
+    'round': 'R32',
+    'surface': '',
+    'tourney_date': '2026-06-23',
+    'winner_name': 'Giles Hussey',
+    'winner_ioc': 'GBR',
+    'loser_name': 'Matteo Arnaldi',
+    'loser_ioc': 'ITA',
+    'score': '6-4 6-2',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
    
 ]
 
