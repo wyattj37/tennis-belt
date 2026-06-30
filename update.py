@@ -21,7 +21,6 @@ wta_new_matches = [
     'change': 'No'
     },
 
-
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
