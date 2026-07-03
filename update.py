@@ -17,34 +17,9 @@ atp_new_matches = [
     'change': 'No'
     },
 
-    {'tourney_name': 'Wimbledon',
-    'round': 'R128',
-    'surface': 'Grass',
-    'tourney_date': '2026-06-30',
-    'winner_name': 'Zizou Bergs',
-    'winner_ioc': 'BEL',
-    'loser_name': 'Ugo Humbert',
-    'loser_ioc': 'FRA',
-    'score': '6-2 7-5 4-6 3-6 6-3',
-    'defenses': 1,
-    'change': 'No'
-    },
-
 ]
 
 wta_new_matches = [
-    {'tourney_name': 'Wimbledon',
-    'round': 'R64',
-    'surface': 'Grass',
-    'tourney_date': '2026-07-01',
-    'winner_name': 'Karolina Muchova',
-    'winner_ioc': 'CZE',
-    'loser_name': 'Zhang Shuai',
-    'loser_ioc': 'CHN',
-    'score': '6-3 6-2',
-    'defenses': 2,
-    'change': 'No'
-    },
 
 ]
 
