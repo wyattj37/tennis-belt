@@ -5,6 +5,19 @@ import subprocess
 
 atp_new_matches = [
     {'tourney_name': 'Wimbledon',
+    'round': 'R64',
+    'surface': 'Grass',
+    'tourney_date': '2026-07-02',
+    'winner_name': 'Zizou Bergs',
+    'winner_ioc': 'BEL',
+    'loser_name': 'Jaime Faria',
+    'loser_ioc': 'POR',
+    'score': '7-6(6) 4-6 6-2 6-3',
+    'defenses': 2,
+    'change': 'No'
+    },
+
+    {'tourney_name': 'Wimbledon',
     'round': 'R128',
     'surface': 'Grass',
     'tourney_date': '2026-06-30',
