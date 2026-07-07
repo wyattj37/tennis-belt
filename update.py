@@ -20,6 +20,19 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
+    {'tourney_name': 'Wimbledon',
+    'round': 'R32',
+    'surface': 'Grass',
+    'tourney_date': '2026-07-03',
+    'winner_name': 'Karolina Muchova',
+    'winner_ioc': 'CZE',
+    'loser_name': 'Mananchaya Sawangkaew',
+    'loser_ioc': 'THA',
+    'score': '6-2 7-6(1)',
+    'defenses': 3,
+    'change': 'No'
+    },
+
 
 ]
 
