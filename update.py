@@ -18,15 +18,15 @@ atp_new_matches = [
     },
 
     {'tourney_name': 'Wimbledon',
-    'round': 'R64',
+    'round': 'R16',
     'surface': 'Grass',
-    'tourney_date': '2026-07-02',
-    'winner_name': 'Zizou Bergs',
-    'winner_ioc': 'BEL',
-    'loser_name': 'Jaime Faria',
-    'loser_ioc': 'POR',
-    'score': '7-6(6) 4-6 6-2 6-3',
-    'defenses': 2,
+    'tourney_date': '2026-07-06',
+    'winner_name': 'Arthur Fery',
+    'winner_ioc': 'GBR',
+    'loser_name': 'Grigor Dimitrov',
+    'loser_ioc': 'BUL',
+    'score': '7-5 3-6 4-6 6-4 7-6(7)',
+    'defenses': 1,
     'change': 'No'
     },
 
@@ -46,7 +46,18 @@ wta_new_matches = [
     'change': 'No'
     },
 
-
+    {'tourney_name': 'Wimbledon',
+    'round': 'R16',
+    'surface': 'Grass',
+    'tourney_date': '2026-07-05',
+    'winner_name': 'Karolina Muchova',
+    'winner_ioc': 'CZE',
+    'loser_name': 'Barbora Krejcikova',
+    'loser_ioc': 'CZE',
+    'score': '7-5 5-7 6-3',
+    'defenses': 4,
+    'change': 'No'
+    },
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
