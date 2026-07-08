@@ -34,6 +34,19 @@ atp_new_matches = [
 
 wta_new_matches = [
     {'tourney_name': 'Wimbledon',
+    'round': 'QF',
+    'surface': 'Grass',
+    'tourney_date': '2026-07-07',
+    'winner_name': 'Karolina Muchova',
+    'winner_ioc': 'CZE',
+    'loser_name': 'Naomi Osaka',
+    'loser_ioc': 'JPN',
+    'score': '7-6(4) 6-4',
+    'defenses': 5,
+    'change': 'No'
+    },
+
+    {'tourney_name': 'Wimbledon',
     'round': 'R32',
     'surface': 'Grass',
     'tourney_date': '2026-07-03',
