@@ -5,6 +5,19 @@ import subprocess
 
 atp_new_matches = [
     {'tourney_name': 'Wimbledon',
+    'round': 'QF',
+    'surface': 'Grass',
+    'tourney_date': '2026-07-08',
+    'winner_name': 'Arthur Fery',
+    'winner_ioc': 'GBR',
+    'loser_name': 'Flavio Cobolli',
+    'loser_ioc': 'ITA',
+    'score': '6-4 7-6(4) 6-0',
+    'defenses': 2,
+    'change': 'No'
+    },
+
+    {'tourney_name': 'Wimbledon',
     'round': 'R32',
     'surface': 'Grass',
     'tourney_date': '2026-07-04',
@@ -33,6 +46,19 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
+    {'tourney_name': 'Wimbledon',
+    'round': 'SF',
+    'surface': 'Grass',
+    'tourney_date': '2026-07-09',
+    'winner_name': 'Karolina Muchova',
+    'winner_ioc': 'CZE',
+    'loser_name': 'Coco Gauff',
+    'loser_ioc': 'USA',
+    'score': '6-2 1-6 7-6(10)',
+    'defenses': 5,
+    'change': 'No'
+    },
+
     {'tourney_name': 'Wimbledon',
     'round': 'R32',
     'surface': 'Grass',
