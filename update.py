@@ -5,6 +5,19 @@ import subprocess
 
 atp_new_matches = [
     {'tourney_name': 'Wimbledon',
+    'round': 'SF',
+    'surface': 'Grass',
+    'tourney_date': '2026-07-10',
+    'winner_name': 'Alexander Zverev',
+    'winner_ioc': 'GER',
+    'loser_name': 'Arthur Fery',
+    'loser_ioc': 'GBR',
+    'score': '7-6(0) 6-2 6-4',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
+    {'tourney_name': 'Wimbledon',
     'round': 'QF',
     'surface': 'Grass',
     'tourney_date': '2026-07-08',
