@@ -4,46 +4,11 @@ from datetime import date
 import subprocess
 
 atp_new_matches = [
-    {'tourney_name': 'Wimbledon',
-    'round': 'SF',
-    'surface': 'Grass',
-    'tourney_date': '2026-07-10',
-    'winner_name': 'Alexander Zverev',
-    'winner_ioc': 'GER',
-    'loser_name': 'Arthur Fery',
-    'loser_ioc': 'GBR',
-    'score': '7-6(0) 6-2 6-4',
-    'defenses': 0,
-    'change': 'Yes'
-    },
 
-    {'tourney_name': 'Wimbledon',
-    'round': 'F',
-    'surface': 'Grass',
-    'tourney_date': '2026-07-12',
-    'winner_name': 'Jannik Sinner',
-    'winner_ioc': 'ITA',
-    'loser_name': 'Alexander Zverev',
-    'loser_ioc': 'GER',
-    'score': '6-7(7) 7-6(2) 6-3 6-4',
-    'defenses': 0,
-    'change': 'Yes'
-    },
 ]
 
 wta_new_matches = [
-    {'tourney_name': 'Wimbledon',
-    'round': 'F',
-    'surface': 'Grass',
-    'tourney_date': '2026-07-11',
-    'winner_name': 'Linda Noskova',
-    'winner_ioc': 'CZE',
-    'loser_name': 'Karolina Muchova',
-    'loser_ioc': 'CZE',
-    'score': '6-2 5-7 6-3',
-    'defenses': 0,
-    'change': 'Yes'
-    },
+
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
