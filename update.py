@@ -34,6 +34,19 @@ atp_new_matches = [
 
 wta_new_matches = [
     {'tourney_name': 'Wimbledon',
+    'round': 'F',
+    'surface': 'Grass',
+    'tourney_date': '2026-07-11',
+    'winner_name': 'Linda Noskova',
+    'winner_ioc': 'CZE',
+    'loser_name': 'Karolina Muchova',
+    'loser_ioc': 'CZE',
+    'score': '6-2 5-7 6-3',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
+    {'tourney_name': 'Wimbledon',
     'round': 'QF',
     'surface': 'Grass',
     'tourney_date': '2026-07-07',
