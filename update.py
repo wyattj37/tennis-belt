@@ -18,18 +18,17 @@ atp_new_matches = [
     },
 
     {'tourney_name': 'Wimbledon',
-    'round': 'QF',
+    'round': 'F',
     'surface': 'Grass',
-    'tourney_date': '2026-07-08',
-    'winner_name': 'Arthur Fery',
-    'winner_ioc': 'GBR',
-    'loser_name': 'Flavio Cobolli',
-    'loser_ioc': 'ITA',
-    'score': '6-4 7-6(4) 6-0',
-    'defenses': 2,
-    'change': 'No'
+    'tourney_date': '2026-07-12',
+    'winner_name': 'Jannik Sinner',
+    'winner_ioc': 'ITA',
+    'loser_name': 'Alexander Zverev',
+    'loser_ioc': 'GER',
+    'score': '6-7(7) 7-6(2) 6-3 6-4',
+    'defenses': 0,
+    'change': 'Yes'
     },
-
 ]
 
 wta_new_matches = [
@@ -44,32 +43,6 @@ wta_new_matches = [
     'score': '6-2 5-7 6-3',
     'defenses': 0,
     'change': 'Yes'
-    },
-
-    {'tourney_name': 'Wimbledon',
-    'round': 'QF',
-    'surface': 'Grass',
-    'tourney_date': '2026-07-07',
-    'winner_name': 'Karolina Muchova',
-    'winner_ioc': 'CZE',
-    'loser_name': 'Naomi Osaka',
-    'loser_ioc': 'JPN',
-    'score': '7-6(4) 6-4',
-    'defenses': 5,
-    'change': 'No'
-    },
-
-    {'tourney_name': 'Wimbledon',
-    'round': 'SF',
-    'surface': 'Grass',
-    'tourney_date': '2026-07-09',
-    'winner_name': 'Karolina Muchova',
-    'winner_ioc': 'CZE',
-    'loser_name': 'Coco Gauff',
-    'loser_ioc': 'USA',
-    'score': '6-2 1-6 7-6(10)',
-    'defenses': 6,
-    'change': 'No'
     },
 ]
 
