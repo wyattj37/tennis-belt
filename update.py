@@ -11,7 +11,7 @@ wta_new_matches = [
     {'tourney_name': '2026 National Bank Open presented by Rogers',
     'round': 'R32',
     'surface': 'Hard',
-    'tourney_date': '',
+    'tourney_date': '2026-08-07',
     'winner_name': 'Alexandra Eala',
     'winner_ioc': 'PHI',
     'loser_name': 'Caty McNally',
