@@ -8,7 +8,18 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
-
+    {'tourney_name': '2026 National Bank Open presented by Rogers',
+    'round': 'R32',
+    'surface': 'Hard',
+    'tourney_date': '',
+    'winner_name': 'Alexandra Eala',
+    'winner_ioc': 'PHI',
+    'loser_name': 'Caty McNally',
+    'loser_ioc': 'USA',
+    'score': '6-3 5-7 6-4',
+    'defenses': 0,
+    'change': 'Yes'
+    },
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
