@@ -1,0 +1,10 @@
+# Tennis Abstract event -> tourney_name to write into update.py.
+#
+# Tennis Abstract names events by city ("Montreal"); matches_all.json uses the
+# official name. Keys may be "{year}{City}" (e.g. 2026Montreal) or a bare city
+# name to cover every year. Unlisted events fall back to the bare city name.
+#
+# Surface still resolves through tournaments.yaml, which is keyed on city, so
+# adding an entry here does not require touching that file.
+
+"2026Montreal": "2026 National Bank Open presented by Rogers"
