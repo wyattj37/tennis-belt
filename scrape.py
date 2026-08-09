@@ -34,6 +34,7 @@ import ssl
 import sys
 import unicodedata
 from pathlib import Path
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 import yaml
@@ -82,19 +83,27 @@ def norm(s: str) -> str:
     return " ".join(s.lower().split())
 
 
-def ssl_context() -> ssl.SSLContext:
-    """Prefer certifi's bundle: python.org builds on macOS ship without root certs."""
-    try:
-        import certifi
-        return ssl.create_default_context(cafile=certifi.where())
-    except ImportError:
-        return ssl.create_default_context()
-
-
 def fetch(url: str) -> str:
+    """GET a page, letting urlopen build its own TLS context.
+
+    Do not pass `context=` on the happy path. Tennis Abstract sits behind
+    Cloudflare, which 403s a caller-supplied context from a datacenter IP
+    (reproduced 3/3 on a GitHub runner, where the same request without the
+    kwarg returns 200) — the handshake differs subtly from the one
+    http.client builds. The certifi fallback exists only for python.org
+    builds on macOS, which ship without root certificates.
+    """
     req = Request(url, headers={"User-Agent": "tennis-belt-scraper/2.0"})
-    with urlopen(req, timeout=30, context=ssl_context()) as r:
-        return r.read().decode("utf-8", errors="replace")
+    try:
+        with urlopen(req, timeout=30) as r:
+            return r.read().decode("utf-8", errors="replace")
+    except URLError as e:
+        if not isinstance(e.reason, ssl.SSLCertVerificationError):
+            raise
+        import certifi
+        ctx = ssl.create_default_context(cafile=certifi.where())
+        with urlopen(req, timeout=30, context=ctx) as r:
+            return r.read().decode("utf-8", errors="replace")
 
 
 def find_current_events() -> dict[str, list[tuple[str, str, str]]]:
