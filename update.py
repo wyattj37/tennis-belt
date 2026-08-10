@@ -3,6 +3,8 @@ import pandas as pd
 from datetime import date
 import subprocess
 
+# format for the date field is: 'YYYY-MM-DD'
+
 atp_new_matches = [
 
 ]
@@ -11,7 +13,7 @@ wta_new_matches = [
     {'tourney_name': '2026 National Bank Open presented by Rogers',
     'round': 'R16',
     'surface': 'Hard',
-    'tourney_date': '',
+    'tourney_date': '2026-08-09',
     'winner_name': 'Belinda Bencic',
     'winner_ioc': 'SUI',
     'loser_name': 'Alexandra Eala',
