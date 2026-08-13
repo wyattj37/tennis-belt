@@ -10,6 +10,8 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
+    # NEEDS MANUAL HANDLING: 2026 National Bank Open presented by Rogers QF: Belinda Bencic vs Coco Gauff — W/O
+
     {'tourney_name': '2026 National Bank Open presented by Rogers',
     'round': 'R16',
     'surface': 'Hard',
