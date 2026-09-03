@@ -10,9 +10,20 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
-    # NEEDS MANUAL HANDLING: Cincinnati R64: Belinda Bencic vs Lois Boisson — 63 00 RET
-
-   
+    {
+        'tourney_name': 'US Open',
+        'round': 'R128',
+        'surface': 'Hard',
+        'tourney_date': '2026-09-01',
+        'winner_name': 'Yulia Putintseva',
+        'winner_ioc': 'KAZ',
+        'loser_name': 'Belinda Bencic',
+        'loser_ioc': 'SUI',
+        'score': '4-6 7-5 6-3',
+        'defenses': 0,
+        'change': 'Yes',
+        'reign_number': 0,
+    },
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
