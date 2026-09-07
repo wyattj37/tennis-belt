@@ -33,6 +33,7 @@ import re
 import ssl
 import sys
 import unicodedata
+from datetime import date
 from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
@@ -122,6 +123,115 @@ def find_current_events() -> dict[str, list[tuple[str, str, str]]]:
         url = f"{TA_BASE}/current/{slug}.html"
         events[tour.lower()].append((year, city, url))
     return events
+
+
+# Tennis Abstract's home page never links a live draw for majors, only a
+# pre-tournament forecast page with no completedSingles/upcomingSingles data
+# (checked 2026-09: the men's/women's "...Forecast.html" pages it does link
+# are just win-probability tables). That's why the scraper went dark for the
+# whole 2026 US Open. WTA's own site runs on an unauthenticated JSON API that
+# does publish the live draw; ATP's site is behind Cloudflare and returns 403
+# to a plain request, so this fallback only covers the WTA side of a slam.
+WTA_API_BASE = "https://api.wtatennis.com"
+WTA_SLAM_GROUPS = {
+    "901": "Australian Open",
+    "903": "Roland Garros",
+    "904": "Wimbledon",
+    "905": "US Open",
+}
+# Grand Slam draws are always 128 singles players; a match's RoundID (1-7)
+# names the round straightforwardly, unlike Tennis Abstract's per-draw-size
+# numbering.
+SLAM_ROUND_MAP = {1: "R128", 2: "R64", 3: "R32", 4: "R16", 5: "QF", 6: "SF", 7: "F"}
+
+
+def find_live_wta_slam(year: str) -> tuple[str, str] | None:
+    """Return (group_id, name) for the WTA major currently in progress, if any."""
+    for group_id, name in WTA_SLAM_GROUPS.items():
+        url = f"{WTA_API_BASE}/tennis/tournaments/{group_id}/{year}"
+        try:
+            info = json.loads(fetch(url))
+        except Exception as e:
+            print(f"  wta slam lookup failed for {name}: {e}", file=sys.stderr)
+            continue
+        if info.get("status") == "live":
+            return group_id, name
+    return None
+
+
+def wta_slam_matches(group_id: str, year: str, holder: str) -> tuple[list[dict], list[str]]:
+    """Every completed main-draw singles match involving `holder` at a live WTA slam.
+
+    Returns (found, unresolved) in the same shape as holder_matches(), sourced
+    from api.wtatennis.com's raw match feed instead of a Tennis Abstract page.
+    Score reconstruction works from the per-set game counts (ScoreSetNA/B) and
+    tiebreak-loser points (ScoreTbSetN) rather than the API's own human-readable
+    ScoreString/ResultString fields, which were verified against the real
+    Zheng-Keys US Open R32 result (2026-09-05) to attach the tiebreak
+    parenthetical to the *winner's* points — the opposite of this project's
+    convention (loser's points), and of ScoreTbSetN itself.
+    """
+    url = f"{WTA_API_BASE}/tennis/tournaments/{group_id}/{year}/matches"
+    data = json.loads(fetch(url))
+    holder_n = norm(holder)
+    found: list[dict] = []
+    unresolved: list[str] = []
+
+    for m in data.get("matches", []):
+        if m.get("DrawMatchType") != "S" or m.get("DrawLevelType") != "M":
+            continue
+        name_a = f"{m.get('PlayerNameFirstA', '')} {m.get('PlayerNameLastA', '')}".strip()
+        name_b = f"{m.get('PlayerNameFirstB', '')} {m.get('PlayerNameLastB', '')}".strip()
+        if holder_n not in (norm(name_a), norm(name_b)):
+            continue
+        if m.get("MatchState") != "F":
+            continue  # in progress or not yet played; next run picks it up
+
+        round_token = str(m.get("RoundID", ""))
+        round_label = SLAM_ROUND_MAP.get(int(round_token)) if round_token.isdigit() else None
+        if round_label is None:
+            unresolved.append(f"{name_a} vs {name_b}: unrecognised RoundID '{round_token}'")
+            continue
+
+        sets, a_sets, b_sets = [], 0, 0
+        for n in range(1, 6):
+            a, b = m.get(f"ScoreSet{n}A"), m.get(f"ScoreSet{n}B")
+            if not a or not b:
+                break
+            a, b = int(a), int(b)
+            sets.append((a, b, m.get(f"ScoreTbSet{n}") or ""))
+            a_sets += a > b
+            b_sets += b > a
+        if not sets or a_sets == b_sets:
+            unresolved.append(f"{name_a} vs {name_b}: could not read score '{m.get('ScoreString')}'")
+            continue
+        winner_is_a = a_sets > b_sets
+
+        tokens = []
+        for a, b, tb in sets:
+            wg, lg = (a, b) if winner_is_a else (b, a)
+            tok = f"{wg}-{lg}"
+            if tb and abs(wg - lg) == 1 and max(wg, lg) >= 7:
+                tok += f"({tb})"
+            tokens.append(tok)
+
+        winner_name, loser_name = (name_a, name_b) if winner_is_a else (name_b, name_a)
+        winner_ioc, loser_ioc = (
+            (m.get("PlayerCountryA", ""), m.get("PlayerCountryB", ""))
+            if winner_is_a else
+            (m.get("PlayerCountryB", ""), m.get("PlayerCountryA", ""))
+        )
+        found.append({
+            "round": round_label,
+            "winner_name": winner_name,
+            "winner_ioc": winner_ioc.upper(),
+            "loser_name": loser_name,
+            "loser_ioc": loser_ioc.upper(),
+            "raw_score": " ".join(tokens),
+        })
+
+    found.sort(key=lambda p: ROUND_ORDER.index(p["round"]))
+    return found, unresolved
 
 
 def extract_js_string(html: str, var: str) -> str:
@@ -408,6 +518,70 @@ def lookup_surface(surfaces: dict, names: list[str]) -> str:
     return ""
 
 
+def trim_and_build(
+    found: list[dict],
+    name: str,
+    surface: str,
+    year: str,
+    holder: str,
+    anchor_opp: str,
+    anchor_round: str,
+    name_map: dict[str, str],
+) -> tuple[list[dict], list[str]]:
+    """Turn one draw's holder-matches into belt-match dicts, oldest first.
+
+    Shared by the Tennis Abstract path (regular tour events) and the WTA API
+    path (Grand Slams): both produce a `found` list in the same shape
+    (round/winner_name/winner_ioc/loser_name/loser_ioc/raw_score), sorted
+    oldest round first, and the trimming rules are identical either way.
+    """
+    holder_n = norm(holder)
+    new_matches: list[dict] = []
+    notes: list[str] = []
+
+    # Drop anything at or before the holder's last recorded win: those
+    # rounds pre-date the reign. If that win isn't in this draw, the reign
+    # started elsewhere and every match here is a belt match.
+    start = 0
+    if anchor_opp and anchor_round in ROUND_ORDER:
+        for i, p in enumerate(found):
+            if (norm(p["winner_name"]) == holder_n
+                    and norm(p["loser_name"]) == norm(anchor_opp)
+                    and p["round"] == anchor_round):
+                start = i + 1
+                break
+
+    for p in found[start:]:
+        other = p["loser_name"] if norm(p["winner_name"]) == holder_n else p["winner_name"]
+        if INCOMPLETE_RE.search(p["raw_score"]):
+            notes.append(f"{name} {p['round']}: {holder} vs {other} — {p['raw_score']}")
+            break
+        score = convert_score(p["raw_score"])
+        if score is None:
+            notes.append(
+                f"{name} {p['round']}: {holder} vs {other} — unparsed score "
+                f"'{p['raw_score']}'"
+            )
+            break
+        new_matches.append({
+            "tourney_name": name,
+            "round": p["round"],
+            "surface": surface,
+            "tourney_date": "",
+            "winner_name": canonical(p["winner_name"], name_map),
+            "winner_ioc": p["winner_ioc"],
+            "loser_name": canonical(p["loser_name"], name_map),
+            "loser_ioc": p["loser_ioc"],
+            "score": score,
+            "_year": year,
+        })
+        # The holder just lost: the belt moves, so stop here.
+        if norm(p["winner_name"]) != holder_n:
+            break
+
+    return new_matches, notes
+
+
 def collect_new_matches(
     events: list[tuple[str, str, str]],
     holder: str,
@@ -418,7 +592,6 @@ def collect_new_matches(
     name_map: dict[str, str],
 ) -> tuple[list[dict], list[str]]:
     """Gather the holder's unrecorded belt matches across the live tournaments."""
-    holder_n = norm(holder)
     new_matches: list[dict] = []
     notes: list[str] = []
 
@@ -440,45 +613,11 @@ def collect_new_matches(
         for row in unresolved:
             notes.append(f"{name}: could not resolve round for '{row}'")
 
-        # Drop anything at or before the holder's last recorded win: those
-        # rounds pre-date the reign. If that win isn't in this draw, the reign
-        # started elsewhere and every match here is a belt match.
-        start = 0
-        if anchor_opp and anchor_round in ROUND_ORDER:
-            for i, p in enumerate(found):
-                if (norm(p["winner_name"]) == holder_n
-                        and norm(p["loser_name"]) == norm(anchor_opp)
-                        and p["round"] == anchor_round):
-                    start = i + 1
-                    break
-
-        for p in found[start:]:
-            other = p["loser_name"] if norm(p["winner_name"]) == holder_n else p["winner_name"]
-            if INCOMPLETE_RE.search(p["raw_score"]):
-                notes.append(f"{name} {p['round']}: {holder} vs {other} — {p['raw_score']}")
-                break
-            score = convert_score(p["raw_score"])
-            if score is None:
-                notes.append(
-                    f"{name} {p['round']}: {holder} vs {other} — unparsed score "
-                    f"'{p['raw_score']}'"
-                )
-                break
-            new_matches.append({
-                "tourney_name": name,
-                "round": p["round"],
-                "surface": surface,
-                "tourney_date": "",
-                "winner_name": canonical(p["winner_name"], name_map),
-                "winner_ioc": p["winner_ioc"],
-                "loser_name": canonical(p["loser_name"], name_map),
-                "loser_ioc": p["loser_ioc"],
-                "score": score,
-                "_year": year,
-            })
-            # The holder just lost: the belt moves, so stop here.
-            if norm(p["winner_name"]) != holder_n:
-                break
+        matches, event_notes = trim_and_build(
+            found, name, surface, year, holder, anchor_opp, anchor_round, name_map
+        )
+        new_matches.extend(matches)
+        notes.extend(event_notes)
 
     return new_matches, notes
 
@@ -515,15 +654,26 @@ def main() -> int:
         print(f"Tennis Abstract home page fetch failed: {e}", file=sys.stderr)
         return 1
 
+    this_year = str(date.today().year)
+    try:
+        live_wta_slam = find_live_wta_slam(this_year)
+    except Exception as e:
+        print(f"  wta slam lookup failed: {e}", file=sys.stderr)
+        live_wta_slam = None
+
     summary_lines: list[str] = []
     for tour in ("atp", "wta"):
         holder, prev_def, anchor_opp, anchor_round = get_holder_state(
             lineage_paths[tour], matches_all_paths[tour]
         )
         events = live.get(tour, [])
+        slam = live_wta_slam if tour == "wta" else None
+        live_desc = [c for _, c, _ in events]
+        if slam:
+            live_desc.append(f"{slam[1]} (slam)")
         print(f"[{tour}] holder={holder} (defenses={prev_def}), "
-              f"live events: {', '.join(c for _, c, _ in events) or 'none'}")
-        if not events:
+              f"live events: {', '.join(live_desc) or 'none'}")
+        if not events and not slam:
             continue
 
         historical = json.loads(matches_all_paths[tour].read_text())
@@ -532,7 +682,25 @@ def main() -> int:
 
         found, notes = collect_new_matches(
             events, holder, anchor_opp, anchor_round, surfaces, tourney_names, name_map
-        )
+        ) if events else ([], [])
+
+        if slam:
+            group_id, slam_name = slam
+            try:
+                slam_found, slam_unresolved = wta_slam_matches(group_id, this_year, holder)
+            except Exception as e:
+                print(f"  wta slam fetch failed for {slam_name}: {e}", file=sys.stderr)
+                slam_found, slam_unresolved = [], []
+            for row in slam_unresolved:
+                notes.append(f"{slam_name}: {row}")
+            surface = lookup_surface(surfaces, [slam_name])
+            slam_matches, slam_notes = trim_and_build(
+                slam_found, slam_name, surface, this_year,
+                holder, anchor_opp, anchor_round, name_map,
+            )
+            found.extend(slam_matches)
+            notes.extend(slam_notes)
+            found.sort(key=lambda p: ROUND_ORDER.index(p["round"]))
 
         for note in notes:
             if note in content:

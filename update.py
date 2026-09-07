@@ -12,16 +12,16 @@ atp_new_matches = [
 wta_new_matches = [
     {
         'tourney_name': 'US Open',
-        'round': 'R64',
+        'round': 'R32',
         'surface': 'Hard',
-        'tourney_date': '2026-09-03',
+        'tourney_date': '2026-09-05',
         'winner_name': 'Qinwen Zheng',
         'winner_ioc': 'CHN',
-        'loser_name': 'Yulia Putintseva',
-        'loser_ioc': 'KAZ',
-        'score': '6-4 2-6 6-1',
-        'defenses': 0,
-        'change': 'Yes',
+        'loser_name': 'Madison Keys',
+        'loser_ioc': 'USA',
+        'score': '1-6 7-6(3) 7-5',
+        'defenses': 1,
+        'change': 'No',
         'reign_number': 0,
     },
 ]
@@ -41,6 +41,14 @@ for df in [atp_new_df, wta_new_df]:
 # read in old data, combine with new
 atp_df = pd.read_json("data/matches_all.json")
 wta_df = pd.read_json("data/wta_matches_all.json")
+
+# read_json doesn't recognize 'tourney_date' as a date column, so it comes back
+# as raw epoch-ms ints while the new-match frames above are already datetime64.
+# Align dtypes before concatenating, or duplicate detection below silently
+# misses matches that already made it into the saved file (the two sides
+# compare unequal even when they're the same date).
+atp_df['tourney_date'] = pd.to_datetime(atp_df['tourney_date'], unit='ms')
+wta_df['tourney_date'] = pd.to_datetime(wta_df['tourney_date'], unit='ms')
 
 atp_df = pd.concat([atp_new_df[::-1], atp_df], ignore_index=True)
 wta_df = pd.concat([wta_new_df[::-1], wta_df], ignore_index=True)
