@@ -24,6 +24,18 @@ wta_new_matches = [
         'change': 'No',
         'reign_number': 0,
     },
+    {'tourney_name': 'US Open',
+    'round': 'R16',
+    'surface': 'Hard',
+    'tourney_date': '',
+    'winner_name': 'Qinwen Zheng',
+    'winner_ioc': 'CHN',
+    'loser_name': 'Iga Swiatek',
+    'loser_ioc': 'POL',
+    'score': '7-5 6-3',
+    'defenses': 2,
+    'change': 'No'
+    },
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
