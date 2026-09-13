@@ -10,22 +10,6 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
-    # NEEDS MANUAL HANDLING: US Open: Qinwen Zheng vs Elena Rybakina: unrecognised RoundID 'Q'
-
-    {
-        'tourney_name': 'US Open',
-        'round': 'R32',
-        'surface': 'Hard',
-        'tourney_date': '2026-09-05',
-        'winner_name': 'Qinwen Zheng',
-        'winner_ioc': 'CHN',
-        'loser_name': 'Madison Keys',
-        'loser_ioc': 'USA',
-        'score': '1-6 7-6(3) 7-5',
-        'defenses': 1,
-        'change': 'No',
-        'reign_number': 0,
-    },
     {'tourney_name': 'US Open',
     'round': 'R16',
     'surface': 'Hard',
@@ -35,6 +19,45 @@ wta_new_matches = [
     'loser_name': 'Iga Swiatek',
     'loser_ioc': 'POL',
     'score': '7-5 6-3',
+    'defenses': 2,
+    'change': 'No'
+    },
+
+    {'tourney_name': 'US Open',
+    'round': 'QF',
+    'surface': 'Hard',
+    'tourney_date': '2026-09-09',
+    'winner_name': 'Elena Rybakina',
+    'winner_ioc': 'KAZ',
+    'loser_name': 'Qinwen Zheng',
+    'loser_ioc': 'CHN',
+    'score': '3-6 6-1 6-4',
+    'defenses': 0,
+    'change': 'Yes'
+    },
+
+    {'tourney_name': 'US Open',
+    'round': 'SF',
+    'surface': 'Hard',
+    'tourney_date': '2026-09-10',
+    'winner_name': 'Elena Rybakina',
+    'winner_ioc': 'KAZ',
+    'loser_name': 'Coco Gauff',
+    'loser_ioc': 'USA',
+    'score': '3-6 6-4 6-4',
+    'defenses': 1,
+    'change': 'No'
+    },
+    
+    {'tourney_name': 'US Open',
+    'round': 'F',
+    'surface': 'Hard',
+    'tourney_date': '2026-09-12',
+    'winner_name': 'Elena Rybakina',
+    'winner_ioc': 'KAZ',
+    'loser_name': 'Aryna Sabalenka',
+    'loser_ioc': 'BLR',
+    'score': '6-4 5-7 6-2',
     'defenses': 2,
     'change': 'No'
     },
