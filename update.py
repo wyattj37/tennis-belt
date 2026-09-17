@@ -67,9 +67,19 @@ atp_new_df = pd.DataFrame(atp_new_matches)
 wta_new_df = pd.DataFrame(wta_new_matches)
 
 # if there are multiple new matches, make sure they are ordered correctly
-for df in [atp_new_df, wta_new_df]:
+for tour, df in [('atp', atp_new_df), ('wta', wta_new_df)]:
     if len (df) > 0:
-        df['tourney_date'] = pd.to_datetime(df['tourney_date'], format="%Y-%m-%d")
+        df['tourney_date'] = pd.to_datetime(df['tourney_date'], format="%Y-%m-%d",
+                                            errors='coerce')
+        # scrape.py leaves tourney_date blank for manual fill-in. A blank left
+        # in place lands in matches_all.json as null, which breaks every later
+        # run that sorts by date -- so stop here instead of writing it.
+        undated = df[df['tourney_date'].isna()]
+        if not undated.empty:
+            raise SystemExit(
+                f"[{tour}] Missing/unparseable tourney_date (expected 'YYYY-MM-DD'):\n"
+                f"{undated[['tourney_name', 'round', 'winner_name', 'loser_name']]}"
+            )
         round_order = ['RR', 'R128', 'R64', 'R32', 'R16', 'QF', 'SF', 'F']
         df['round'] = pd.Categorical(df['round'], categories=round_order, ordered=True)
         df = df.sort_values(by=['tourney_date', 'round'], ascending=[True, False])

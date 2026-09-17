@@ -380,6 +380,23 @@ def holder_matches(html: str, holder: str) -> tuple[list[dict], list[str]]:
     return found, unresolved
 
 
+def sorted_newest_first(matches: list[dict]) -> list[dict]:
+    """Newest first, tolerating rows whose `tourney_date` was never filled in.
+
+    An undated row inherits the date of the row above it in file order, which
+    update.py already writes newest-first, so it holds its recorded slot
+    instead of crashing the sort or sinking to the bottom of the list.
+    """
+    keyed, carried = [], 0
+    for i, m in enumerate(matches):
+        tdate = m.get("tourney_date")
+        if tdate is not None:
+            carried = tdate
+        keyed.append((carried, -i, m))
+    keyed.sort(reverse=True)
+    return [m for _, _, m in keyed]
+
+
 def get_holder_state(lineage_path: Path, matches_path: Path) -> tuple[str, int, str, str]:
     """Return (holder, defenses, last_win_opponent, last_win_round).
 
@@ -389,7 +406,7 @@ def get_holder_state(lineage_path: Path, matches_path: Path) -> tuple[str, int, 
     lineage = json.loads(lineage_path.read_text())
     matches = json.loads(matches_path.read_text())
     holder = sorted(lineage, key=lambda r: r["date_won"], reverse=True)[0]["holder"]
-    for m in sorted(matches, key=lambda r: r["tourney_date"], reverse=True):
+    for m in sorted_newest_first(matches):
         if norm(m["winner_name"]) == norm(holder):
             return holder, int(m["defenses"]), m.get("loser_name", ""), m.get("round", "")
     return holder, 0, "", ""
