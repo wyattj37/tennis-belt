@@ -61,6 +61,18 @@ wta_new_matches = [
     # 'defenses': 2,
     # 'change': 'No'
     # },
+    {'tourney_name': 'Beijing',
+    'round': 'R64',
+    'surface': 'Hard',
+    'tourney_date': '',
+    'winner_name': 'Alina Charaeva',
+    'winner_ioc': 'ARM',
+    'loser_name': 'Elena Rybakina',
+    'loser_ioc': 'KAZ',
+    'score': '3-6 6-4 6-3',
+    'defenses': 0,
+    'change': 'Yes'
+    },
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
