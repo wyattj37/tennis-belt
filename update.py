@@ -10,23 +10,10 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
-
-    {'tourney_name': 'Beijing',
-    'round': 'R64',
-    'surface': 'Hard',
-    'tourney_date': '2026-10-03',
-    'winner_name': 'Alina Charaeva',
-    'winner_ioc': 'ARM',
-    'loser_name': 'Elena Rybakina',
-    'loser_ioc': 'KAZ',
-    'score': '3-6 6-4 6-3',
-    'defenses': 0,
-    'change': 'Yes'
-    },
     {'tourney_name': 'Beijing',
     'round': 'R32',
     'surface': 'Hard',
-    'tourney_date': '',
+    'tourney_date': '2026-10-05',
     'winner_name': 'Alina Charaeva',
     'winner_ioc': 'ARM',
     'loser_name': 'Sonay Kartal',
@@ -38,7 +25,7 @@ wta_new_matches = [
     {'tourney_name': 'Beijing',
     'round': 'R16',
     'surface': 'Hard',
-    'tourney_date': '',
+    'tourney_date': '2026-10-07',
     'winner_name': 'Qinwen Zheng',
     'winner_ioc': 'CHN',
     'loser_name': 'Alina Charaeva',
