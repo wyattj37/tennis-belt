@@ -34,6 +34,18 @@ wta_new_matches = [
     'defenses': 0,
     'change': 'Yes'
     },
+    {'tourney_name': 'Beijing',
+    'round': 'QF',
+    'surface': 'Hard',
+    'tourney_date': '',
+    'winner_name': 'Qinwen Zheng',
+    'winner_ioc': 'CHN',
+    'loser_name': 'Elina Svitolina',
+    'loser_ioc': 'UKR',
+    'score': '6-3 7-6(6)',
+    'defenses': 1,
+    'change': 'No'
+    },
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
