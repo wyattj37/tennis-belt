@@ -22,6 +22,18 @@ wta_new_matches = [
     'defenses': 2,
     'change': 'No'
     },
+    {'tourney_name': 'Beijing',
+    'round': 'F',
+    'surface': 'Hard',
+    'tourney_date': '',
+    'winner_name': 'Qinwen Zheng',
+    'winner_ioc': 'CHN',
+    'loser_name': 'Mirra Andreeva',
+    'loser_ioc': 'RUS',
+    'score': '7-5 6-4',
+    'defenses': 3,
+    'change': 'No'
+    },
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
