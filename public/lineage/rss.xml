@@ -49,21 +49,21 @@
         
 
         
-            <link>http://localhost:1313/lineage/</link>
+            <link>https://tennis-belt.com/lineage/</link>
         
 
         
-            <atom:link href="http://localhost:1313/lineage/rss.xml" hreflang="en-us" rel="self" type="application/rss+xml"/>
+            <atom:link href="https://tennis-belt.com/lineage/rss.xml" hreflang="en-us" rel="self" type="application/rss+xml"/>
         
 
         
             
 
-            <atom:link href="http://localhost:1313/lineage/" hreflang="en-us" rel="alternate" type="text/html"/>
+            <atom:link href="https://tennis-belt.com/lineage/" hreflang="en-us" rel="alternate" type="text/html"/>
         
             
 
-            <atom:link href="http://localhost:1313/lineage/rss.xml" hreflang="en-us" rel="alternate" type="application/rss+xml"/>
+            <atom:link href="https://tennis-belt.com/lineage/rss.xml" hreflang="en-us" rel="alternate" type="application/rss+xml"/>
         
 
         

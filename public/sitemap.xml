@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://tennis-belt.com/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://tennis-belt.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/lineage/</loc>
+    <loc>https://tennis-belt.com/lineage/</loc>
   </url><url>
-    <loc>http://localhost:1313/stats/</loc>
+    <loc>https://tennis-belt.com/stats/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://tennis-belt.com/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://tennis-belt.com/</loc>
   </url>
 </urlset>

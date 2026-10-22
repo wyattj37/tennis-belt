@@ -49,21 +49,21 @@
         
 
         
-            <link>http://localhost:1313/stats/</link>
+            <link>https://tennis-belt.com/stats/</link>
         
 
         
-            <atom:link href="http://localhost:1313/stats/rss.xml" hreflang="en-us" rel="self" type="application/rss+xml"/>
+            <atom:link href="https://tennis-belt.com/stats/rss.xml" hreflang="en-us" rel="self" type="application/rss+xml"/>
         
 
         
             
 
-            <atom:link href="http://localhost:1313/stats/" hreflang="en-us" rel="alternate" type="text/html"/>
+            <atom:link href="https://tennis-belt.com/stats/" hreflang="en-us" rel="alternate" type="text/html"/>
         
             
 
-            <atom:link href="http://localhost:1313/stats/rss.xml" hreflang="en-us" rel="alternate" type="application/rss+xml"/>
+            <atom:link href="https://tennis-belt.com/stats/rss.xml" hreflang="en-us" rel="alternate" type="application/rss+xml"/>
         
 
         
