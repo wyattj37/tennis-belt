@@ -10,30 +10,7 @@ atp_new_matches = [
 ]
 
 wta_new_matches = [
-    {'tourney_name': 'Beijing',
-    'round': 'SF',
-    'surface': 'Hard',
-    'tourney_date': '2026-10-10',
-    'winner_name': 'Qinwen Zheng',
-    'winner_ioc': 'CHN',
-    'loser_name': 'Elise Mertens',
-    'loser_ioc': 'BEL',
-    'score': '7-5 6-2',
-    'defenses': 2,
-    'change': 'No'
-    },
-    {'tourney_name': 'Beijing',
-    'round': 'F',
-    'surface': 'Hard',
-    'tourney_date': '2026-10-11',
-    'winner_name': 'Qinwen Zheng',
-    'winner_ioc': 'CHN',
-    'loser_name': 'Mirra Andreeva',
-    'loser_ioc': 'RUS',
-    'score': '7-5 6-4',
-    'defenses': 3,
-    'change': 'No'
-    },
+
 ]
 
 atp_new_df = pd.DataFrame(atp_new_matches)
